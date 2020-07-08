@@ -1,7 +1,7 @@
-* {
-    text-align: center;
+*{
+    margin: 0px;
+    padding: 0px;
 }
-
 h1 {
     background-color: #EFFBF5;
 }
@@ -11,6 +11,7 @@ html, body, #index{
     padding: 0px;
     margin: 0px;
     display:block;
+    position: relative;
 }
 .background{
     position: fixed;
@@ -24,22 +25,50 @@ html, body, #index{
     max-width: 100%;
     height: auto;
 }
-img:not(.background){
-    width: 70%;
-    padding: 15%;
+.item>*:not(.background){
+    width: 100%;
     height: auto;
 }
 .container {
     display: grid;
     width:100%;
     height:100%;
+    padding: 10%;
+    margin: 0%;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(auto-fit,minmax(45%,auto));
-    grid-gap: 5%;
+    grid-gap: 3%;
 }
 .item{
     width:100%;
     height:100%;
     display: flex;
     align-items: center;
+}
+.bt{
+    position: absolute;
+    width: 10%;
+    max-height: 30%;
+    z-index: 1000;
+}
+.bttop{
+    top: 5%;
+}
+.btbottom{
+    bottom: 5%;
+}
+.btleft{
+    left: 5%;
+}
+.btright{
+    right: 5%;
+}
+iframe{
+    position: absolute;
+    top: 0%;
+    left:0%;
+    z-index: -1000;
+    width: 100%;
+    height: 100%;
+    border: blue;
 }

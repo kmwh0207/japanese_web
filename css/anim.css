@@ -1,0 +1,85 @@
+.fadeIn {
+    /* Choose the animation */
+    animation-name: FadeIn;
+    /* The animation’s duration */
+    animation-duration: 1000ms;
+    /* The number of times we want
+        the animation to run */
+    animation-iteration-count: 1;
+    /* Causes the animation to reverse
+        on every odd iteration */
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+    animation-fill-mode: none;
+}  
+.fadeOut {
+    /* Choose the animation */
+    animation-name: FadeOut;
+    /* The animation’s duration */
+    animation-duration: 1000ms;
+    /* The number of times we want
+        the animation to run */
+    animation-iteration-count: 1;
+    /* Causes the animation to reverse
+        on every odd iteration */
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+    animation-fill-mode: none;
+}  
+
+@keyframes movingBox {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0.3;
+    }
+  
+    25% {
+      opacity: 0.9;
+    }
+  
+    50% {
+      transform: translate(100px, 100px);
+      opacity: 0.2;
+    }
+  
+    100% {
+      transform: translate(30px, 30px);
+      opacity: 0.8;
+    }
+  }
+  @keyframes rotate_right {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(30deg);
+    }
+  }
+  @keyframes rotate_left {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-30deg);
+    }
+  }
+@keyframes FadeIn {
+	0% {
+		width : 0%;
+		opacity : 0;
+	}
+	100% {
+		width : 100%;
+		opacity : 1;
+	}
+}
+@keyframes FadeOut {
+	0% {
+		width : 100%;
+		opacity : 1;
+	}
+	100% {
+		width : 0%;
+		opacity : 0;
+	}
+}
