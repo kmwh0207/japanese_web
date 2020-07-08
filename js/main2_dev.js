@@ -14,7 +14,7 @@ var movepage = function(page){
         document.getElementById("choice").addEventListener("touchend",function(e){
             e.preventDefault();
             console.log("touch");
-            if(e.changedTouches[0].pageX < document.getElementById("choice").width/2){
+            if(e.changedTouches[0].pageX < document.getElementById("background").width/2){
                 resolve(1);
             }else{
                 resolve(2);
