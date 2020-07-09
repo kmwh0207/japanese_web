@@ -25,7 +25,93 @@
     animation-direction: alternate;
     animation-timing-function: ease-out;
     animation-fill-mode: none;
+}
+.opacity {
+  /* Choose the animation */
+  animation-name: Opacity;
+  /* The animation’s duration */
+  animation-duration: 1000ms;
+  /* The number of times we want
+      the animation to run */
+  animation-iteration-count: 1;
+  /* Causes the animation to reverse
+      on every odd iteration */
+  animation-direction: normal;
+  animation-timing-function: ease-out;
+  animation-fill-mode: none;
+} 
+.opacityReserve {
+  /* Choose the animation */
+  animation-name: Opacity;
+  /* The animation’s duration */
+  animation-duration: 1000ms;
+  /* The number of times we want
+      the animation to run */
+  animation-iteration-count: 2;
+  /* Causes the animation to reverse
+      on every odd iteration */
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: none;
 }  
+.rotateRight{
+      /* Choose the animation */
+      animation-name: rotate_Right;
+      /* The animation’s duration */
+      animation-duration: 1000ms;
+      /* The number of times we want
+          the animation to run */
+      animation-iteration-count: infinite;
+      /* Causes the animation to reverse
+          on every odd iteration */
+      animation-direction: alternate;
+      animation-timing-function: ease-out;
+      animation-fill-mode: none;
+}
+.rotateLeft{
+  /* Choose the animation */
+  animation-name: rotate_Left;
+  /* The animation’s duration */
+  animation-duration: 1000ms;
+  /* The number of times we want
+      the animation to run */
+  animation-iteration-count: infinite;
+  /* Causes the animation to reverse
+      on every odd iteration */
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: none;
+}
+.moveUp{
+  /* Choose the animation */
+  animation-name: moveUp;
+  animation-direction: normal;
+  /* The animation’s duration */
+  animation-duration: 2000ms;
+  /* The number of times we want
+      the animation to run */
+  animation-iteration-count: 1;
+  /* Causes the animation to reverse
+      on every odd iteration */
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.moveDown{
+  /* Choose the animation */
+  animation-name: moveDown;
+  animation-direction: normal;
+  /* The animation’s duration */
+  animation-duration: 2000ms;
+  /* The number of times we want
+      the animation to run */
+  animation-iteration-count: 1;
+  /* Causes the animation to reverse
+      on every odd iteration */
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
 
 @keyframes movingBox {
     0% {
@@ -47,7 +133,7 @@
       opacity: 0.8;
     }
   }
-  @keyframes rotate_right {
+  @keyframes rotate_Right {
     0% {
       transform: rotate(0deg);
     }
@@ -55,7 +141,7 @@
       transform: rotate(30deg);
     }
   }
-  @keyframes rotate_left {
+  @keyframes rotate_Left {
     0% {
       transform: rotate(0deg);
     }
@@ -81,5 +167,29 @@
 	100% {
 		width : 0%;
 		opacity : 0;
+	}
+}
+@keyframes moveUp {
+	0% {
+    transform: translateY(150%);
+	}
+	100% {
+    transform: translateY(-150%);
+	}
+}
+@keyframes moveDown {
+	0% {
+    transform: translateY(-150%);
+	}
+	100% {
+    transform: translateY(150%);
+	}
+}
+@keyframes Opacity {
+	0% {
+    opacity: 0%;
+	}
+	100% {
+    opacity: 100%;
 	}
 }

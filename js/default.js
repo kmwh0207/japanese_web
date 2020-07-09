@@ -38,10 +38,11 @@ class Add_img {
         let elements = document.getElementById(this._id).children;
         for (let num=0; num<elements.length; num++) {
             let element = elements[num];
+            element.setAttribute("data-num",num);
             let newElem = document.createElement('img');
             newElem.addEventListener('click',this._event[num],false);
             newElem.src = this._img_list[num];
-            newElem.classList.add(this._anim);
+            this._anim == "" ? "":newElem.classList.add(this._anim);
             console.log(num);
             element.appendChild(newElem);
         }
@@ -49,3 +50,20 @@ class Add_img {
     }
 }
 
+class Add_color{
+    constructor(id,color){
+        if(!isArrayLike(color)){
+            console.log("is not array");
+        }
+        this._id=id;
+        this._color=color;
+    }
+    apply(addclass){
+        let elements = document.getElementById(this._id).children;
+        for(let num in this._color){
+            let element = elements[num];
+            element.style.background = this._color[num];
+            if(addclass !== undefined) element.classList.add(addclass);
+        }
+    }
+}

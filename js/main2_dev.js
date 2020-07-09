@@ -9,31 +9,34 @@ let imgList = ["img/mainmenu/1.color_eicon.png",
 
 var movepage = function(page){
     document.getElementById("choice").style.display="block";
+    document.getElementById("finger1").classList.add("rotateRight");
+    document.getElementById("finger2").classList.add("rotateLeft");
     new Promise(function(resolve,reject){
         document.getElementById("choice").classList.add("fadeIn");
         document.getElementById("choice").addEventListener("touchend",function(e){
             e.preventDefault();
             console.log("touch");
             if(e.changedTouches[0].pageX < document.getElementById("background").width/2){
-                resolve(1);
+                resolve("");
             }else{
-                resolve(2);
+                resolve("_2");
             }
         })
     }).then(function(result){
-        document.getElementById("frame").setAttribute("src",page+"/?id="+result);
+        document.getElementById("frame").setAttribute("src",page+result+".html");
         document.getElementById("frame").style.zIndex=500;
+        document.getElementById("index").innerHTML="";
     });
 }
 
-let eventList = [function(){movepage("game1.html")},
-function(){movepage("game2.html")},
-function(){movepage("game3.html")},
-function(){movepage("game4.html")},
-function(){movepage("game5.html")},
-function(){movepage("game6.html")},
-function(){movepage("game7.html")},
-function(){movepage("game8.html")},]
+let eventList = [function(){movepage("game1")},
+function(){movepage("game2")},
+function(){movepage("game3")},
+function(){movepage("game4")},
+function(){movepage("game5")},
+function(){movepage("game6")},
+function(){movepage("game7")},
+function(){movepage("game8")}]
 
 window.addEventListener('load',function(){
     let img_run = new Add_img("container",imgList,"fadeIn",eventList);

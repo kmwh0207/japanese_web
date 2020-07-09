@@ -11,7 +11,7 @@ html, body, #index{
     padding: 0px;
     margin: 0px;
     display:block;
-    position: relative;
+    position: absolute;
 }
 .background{
     position: fixed;
@@ -26,8 +26,8 @@ html, body, #index{
     height: auto;
 }
 .item>*:not(.background){
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
 .container {
     display: grid;
@@ -71,4 +71,10 @@ iframe{
     width: 100%;
     height: 100%;
     border: blue;
+}
+.none{
+    display:none;
+}
+.hidden{
+    visibility: hidden;
 }

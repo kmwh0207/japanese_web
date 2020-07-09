@@ -1,0 +1,24 @@
+#container2{ 
+    position: relative;
+    top:27%;
+    left:0px;
+    display: grid;
+    max-width:100%;
+    height:30%;
+    margin: 0%;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(auto-fit,minmax(30%,auto));
+    padding: 0% 25% 0% 25%;
+}
+#container3 {
+    position: relative;
+    top: 25%;
+    left:0px;
+    display: grid;
+    max-width:100%;
+    height:30%;
+    margin: 0%;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto-fit,minmax(30%,auto));
+    padding: 0% 20% 0% 20%;
+}

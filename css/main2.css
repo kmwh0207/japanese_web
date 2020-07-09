@@ -12,7 +12,7 @@
     transition: all ease 0.5s;
 }
 .item:hover{
-    transform: translateY(-10px);
+    transform: translateY(-10%);
 }
 
 #choice{
@@ -34,37 +34,11 @@
     position: absolute;
     width: 10%;
     top: 30%;
-    left: 30%;
-    /* Choose the animation */
-    animation-name: rotate_right;
-    animation-direction: reverse;
-    /* The animation’s duration */
-    animation-duration: 1000ms;
-    /* The number of times we want
-        the animation to run */
-    animation-iteration-count: infinite;
-    /* Causes the animation to reverse
-        on every odd iteration */
-    animation-direction: alternate;
-    animation-timing-function: ease-out;
-    animation-fill-mode: none;
+    left: 32%;
 }
 #finger2{
     position: absolute;
     width: 9%;
     top: 29%;
-    right: 31%;
-    /* Choose the animation */
-    animation-name: rotate_left;
-    animation-direction: reverse;
-    /* The animation’s duration */
-    animation-duration: 1000ms;
-    /* The number of times we want
-        the animation to run */
-    animation-iteration-count: infinite;
-    /* Causes the animation to reverse
-        on every odd iteration */
-    animation-direction: alternate;
-    animation-timing-function: ease-out;
-    animation-fill-mode: none;
+    right: 32%;
 }
