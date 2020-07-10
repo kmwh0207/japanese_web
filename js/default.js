@@ -50,6 +50,33 @@ class Add_img {
     }
 }
 
+class Add_text {
+    #_id;  
+    #_img_list; //private
+    #_anim;
+    #_event;
+    constructor(id, text_list) {
+        if (isString(id) && isArray(text_list)) {
+            this._id = id;
+            this._text_list = text_list;
+        } else {
+            throw new Error("apply_text 파라미터 타입 에러");
+        }
+    }
+    apply() {
+        let elements = document.getElementById(this._id).children;
+        for (let num=0; num<elements.length; num++) {
+            let element = elements[num];
+            element.setAttribute("data-num",num);
+            let newElem = document.createElement('p');
+            newElem.innerHTML="</br>"+this._text_list[num];
+            console.log(num);
+            element.appendChild(newElem);
+        }
+        console.log("apply text");
+    }
+}
+
 class Add_color{
     constructor(id,color){
         if(!isArrayLike(color)){

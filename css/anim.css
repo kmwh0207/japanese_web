@@ -8,7 +8,7 @@
     animation-iteration-count: 1;
     /* Causes the animation to reverse
         on every odd iteration */
-    animation-direction: alternate;
+    animation-direction: normal;
     animation-timing-function: ease-out;
     animation-fill-mode: none;
 }  
@@ -22,7 +22,7 @@
     animation-iteration-count: 1;
     /* Causes the animation to reverse
         on every odd iteration */
-    animation-direction: alternate;
+    animation-direction: normal;
     animation-timing-function: ease-out;
     animation-fill-mode: none;
 }
@@ -40,7 +40,21 @@
   animation-timing-function: ease-out;
   animation-fill-mode: none;
 } 
-.opacityReserve {
+.opacityReverse {
+  /* Choose the animation */
+  animation-name: Opacity;
+  /* The animation’s duration */
+  animation-duration: 1000ms;
+  /* The number of times we want
+      the animation to run */
+  animation-iteration-count: 2;
+  /* Causes the animation to reverse
+      on every odd iteration */
+  animation-direction: Reverse;
+  animation-timing-function: ease-out;
+  animation-fill-mode: none;
+}  
+.opacityAlternate {
   /* Choose the animation */
   animation-name: Opacity;
   /* The animation’s duration */
@@ -54,6 +68,20 @@
   animation-timing-function: ease-out;
   animation-fill-mode: none;
 }  
+.rotateBoth{
+  /* Choose the animation */
+  animation-name: rotate_Both;
+  /* The animation’s duration */
+  animation-duration: 1000ms;
+  /* The number of times we want
+      the animation to run */
+  animation-iteration-count: infinite;
+  /* Causes the animation to reverse
+      on every odd iteration */
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: none;
+}
 .rotateRight{
       /* Choose the animation */
       animation-name: rotate_Right;
@@ -131,6 +159,14 @@
     100% {
       transform: translate(30px, 30px);
       opacity: 0.8;
+    }
+  }
+  @keyframes rotate_Both {
+    0% {
+      transform: rotate(-30deg);
+    }
+    100% {
+      transform: rotate(30deg);
     }
   }
   @keyframes rotate_Right {

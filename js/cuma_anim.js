@@ -4,12 +4,12 @@ window.addEventListener('load',function(){
     for(let element of elements){
         element.addEventListener("animationend",function(){
             element.classList.add("none");
-            element.classList.remove("opacityReserve");
+            element.classList.remove("opacityAlternate");
         },false);
     }
     setInterval(function(){
         elements[count].classList.remove("none");
-        elements[count].classList.add("opacityReserve");
+        elements[count].classList.add("opacityAlternate");
         count = (count+1)%elements.length;
         console.log(count);
     },1000);

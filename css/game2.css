@@ -8,7 +8,7 @@
     margin: 0%;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(auto-fit,minmax(30%,auto));
-    padding: 0% 25% 0% 25%;
+    padding: 0% 30% 0% 20%;
 }
 #container3 {
     position: relative;

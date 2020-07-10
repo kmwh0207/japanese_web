@@ -1,5 +1,6 @@
 var mode=0;
-
+let selected_id=-1;
+let colorname=[['あか','みどり','あお','おれんじ','むらさき'],['きいろ','ももいろ','しろ','くろ','ちゃいろ']];
 let imgList = ["img/game/color/red.png",
 "img/game/color/green.png",
 "img/game/color/blue.png",
@@ -40,10 +41,11 @@ window.addEventListener('load',function(){
 });
 
 function play_anim(elem,name) {
-    let _id = elem.parentNode.dataset.num;
-    let element= document.getElementById(name).getElementsByTagName("div")[_id];
+    selected_id = elem.parentNode.dataset.num;
+    document.getElementById("content").innerHTML=colorname[mode][selected_id];
+    let element= document.getElementById(name).getElementsByTagName("div")[selected_id];
     element.classList.remove("none");
-    console.log('_id: ', _id);
+    console.log('selected_id: ', selected_id);
     let _x = Math.floor(Math.random() * document.getElementById("background").width) + "px";
     element.style.left = _x;
     element.classList.add("moveUp");

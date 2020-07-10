@@ -4,32 +4,48 @@ let selected_id = 0;
 let imgList1 = ["img/game/fruit/strawberry.png", "img/game/fruit/watermelon.png"];
 
 let eventList1 = [
-    function () {},
-    function () {}
+    function () {
+        this.src = this.src.slice(0,-5)+"_.png"; 
+        document.getElementById("content").innerHTML="イチゴ";
+    },
+    function () {
+        this.src = this.src.slice(0,-5)+"_.png";
+        document.getElementById("content").innerHTML="すいか";
+    }
 ];
 
 let imgList2 = ["img/game/fruit/banana.png", "img/game/fruit/graphe.png", "img/game/fruit/persimmon.png"];
 
 let eventList2 = [
-    function () {},
-    function () {},
-    function () {}
+    function () {this.src = this.src.slice(0,-5)+"_.png";
+    document.getElementById("content").innerHTML="バナナ";
+},
+    function () {this.src = this.src.slice(0,-5)+"_.png";
+    document.getElementById("content").innerHTML="ぶどう";},
+    function () {this.src = this.src.slice(0,-5)+"_.png";
+    document.getElementById("content").innerHTML="かぎ";
+}
 ];
 
 
 let imgList1_ = ["img/game/fruit/apple.png", "img/game/fruit/orange.png"];
 
 let eventList1_ = [
-    function () {},
-    function () {}
+    function () {this.src = this.src.slice(0,-5)+"_.png";
+    document.getElementById("content").innerHTML="りんご";},
+    function () {this.src = this.src.slice(0,-5)+"_.png";
+    document.getElementById("content").innerHTML="オリンジ";}
 ];
 
 let imgList2_ = ["img/game/fruit/peach.png", "img/game/fruit/pear.png", "img/game/fruit/pineapple.png"];
 
 let eventList2_ = [
-    function () {},
-    function () {},
-    function () {}
+    function () {this.src = this.src.slice(0,-5)+"_.png";
+    document.getElementById("content").innerHTML="もも";},
+    function () {this.src = this.src.slice(0,-5)+"_.png";
+    document.getElementById("content").innerHTML="なし";},
+    function () {this.src = this.src.slice(0,-5)+"_.png";
+    document.getElementById("content").innerHTML="パイナップル";}
 ];
 
 

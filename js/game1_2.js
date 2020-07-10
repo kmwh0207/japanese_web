@@ -4,6 +4,8 @@ let _x100;
 let _y100;
 let _x,_y;
 
+let colorname=[['おれんじ','みどり','あか','あお','ももいろ'],['きいろ','むらさき','くろ','しろ','ちゃいろ']];
+
 let imgList1 = ["img/game/color2/orange.png",
 "img/game/color2/green.png",
 "img/game/color2/red.png",
@@ -59,13 +61,14 @@ function handleMove(event){
     if(actionLocation[selected_id][0][0]<=_x100 && actionLocation[selected_id][1][0]>=_x100){
         if(actionLocation[selected_id][0][1]<=_y100 && actionLocation[selected_id][1][1]>=_y100){
             this.classList.add("rotateRight");
+            document.getElementById("content").innerHTML=colorname[mode][selected_id];
             document.getElementsByClassName("item")[selected_id].classList.remove("hidden");
         }
     }
 }
 function handleEnd(event){
     this.classList.remove("rotateRight");
-    this.style.position="";
+    this.style="";
     nextpage(0);
 }
 
