@@ -78,5 +78,15 @@ iframe{
     display:none;
 }
 .hidden{
-    visibility: hidden;
+    /* visibility: hidden; */
+    opacity: 0%;
+}
+p#content{
+    font-size: 180%;
+}
+div#content_box{
+    position: fixed;
+    width:100%;
+    text-align: center;
+    z-index:-300;
 }

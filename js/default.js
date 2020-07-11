@@ -19,6 +19,13 @@ function css(elem, prop, val) {
     elem.style[prop] = val;
 }
 
+function Add_action(id,action){
+    let elements=document.getElementById(id).children;
+    for(let i of elements){
+        i.addEventListener('click',action,false);
+    } 
+}
+
 class Add_img {
     #_id;  
     #_img_list; //private
@@ -38,6 +45,8 @@ class Add_img {
         let elements = document.getElementById(this._id).children;
         for (let num=0; num<elements.length; num++) {
             let element = elements[num];
+            element.removeAttribute('style'); //test
+            element.innerHTML=""; //test
             element.setAttribute("data-num",num);
             let newElem = document.createElement('img');
             newElem.addEventListener('click',this._event[num],false);

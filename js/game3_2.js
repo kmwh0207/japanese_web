@@ -12,7 +12,7 @@ let imgList = ["img/game/family/family_play_olderbrother.png",
 "img/game/family/family_play_youngerbrother.png",
 "img/game/family/family_play_youngersister.png"];
 
-let eventList = [function(){},function(){},function(){},function(){},function(){}];
+let eventList = [function(){},function(){},function(){},function(){},function(){},function(){}];
 let textOrder=[4,2,1,0,5,3];
 let setLocation=[[9,30],[25,19],[42,26],[58,18],[74,40],[91,30]];
 
@@ -21,7 +21,7 @@ window.addEventListener('load',function(){
 });
 window.addEventListener('load',function(){
     nextpage(0);
-    addTouchEvent("container5");
+    addTouchEvent("container6");
 });
 
 function addTouchEvent(id){
@@ -47,15 +47,15 @@ function handleMove(event){
     this.style.top=_y-parseInt(this.offsetHeight/2)+"px";
     _x100=_x/document.body.offsetWidth*100;
     _y100=_y/document.body.offsetHeight*100;
-    let elemnum=textOrder[mode][selected_id];
+    let elemnum=textOrder[selected_id];
     /* console.log(_x100+" "+_y100); */
     /* console.log(actionLocation[elemnum][0]+" "+actionLocation[elemnum][1]) */
-    if(setLocation[textOrder[selected_id]][0]-sensivility<=_x100 && setLocation[textOrder[selected_id]][0]+sensivility>=_x100){
-        if(setLocation[textOrder[selected_id]][1]-sensivility<=_y100 && setLocation[textOrder[selected_id]][1]+sensivility>=_y100){
+    if(setLocation[elemnum][0]-sensivility<=_x100 && setLocation[elemnum][0]+sensivility>=_x100){
+        if(setLocation[elemnum][1]-sensivility<=_y100 && setLocation[elemnum][1]+sensivility>=_y100){
             this.classList.add("rotateBoth");
             this.removeEventListener("touchmove",handleMove,false);
-            this.style.left=setLocation[textOrder[selected_id]][0]/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
-            this.style.top=setLocation[textOrder[selected_id]][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
+            this.style.left=setLocation[elemnum][0]/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
+            this.style.top=setLocation[elemnum][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
         }
     } 
 }
@@ -77,7 +77,7 @@ function nextpage(change){
         
     }else{
         document.getElementById("background").classList.add('opacity');
-        new Add_img("container5",imgList,"fadeIn",eventList).apply();
+        new Add_img("container6",imgList,"fadeIn",eventList).apply();
     }
 }
 
