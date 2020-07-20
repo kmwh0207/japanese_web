@@ -20,31 +20,33 @@ window.addEventListener('load',function(){
 });
 let eventList1 = [
     function () {
-    },
-    function () {
-    },
-    function () {
-    },
-    function () {
-    },
-    function () {
-    },
-    function () {
+        document.getElementById("content").innerHTML = "コーヒー           coffee  ";
+    },function () {
+        document.getElementById("content").innerHTML = "ホットチョコレート hot chocolate";
+    },function () {
+        document.getElementById("content").innerHTML = "ぎゅうにゅう       milk";
+    },function () {
+        document.getElementById("content").innerHTML = "とうにゅう         soybean milk";
+    },function () {
+        document.getElementById("content").innerHTML = "";
+    },function () {
+        document.getElementById("content").innerHTML = "おちゃ             tea";
     }
 ];
 let eventList2 = [
     function () {
+        document.getElementById("content").innerHTML = "りんごジュス       apple juice";
+    },function () {
+        document.getElementById("content").innerHTML = "レモネード         lemonade";
+    },function () {
+        document.getElementById("content").innerHTML = "アイスティー       icetea";
+    },function () {
+        document.getElementById("content").innerHTML = "みず               water";
+    },function () {
+        document.getElementById("content").innerHTML = "";
+    },function () {
+        document.getElementById("content").innerHTML = "オレンジジュース   orangejuice";
     },
-    function () {
-    },
-    function () {
-    },
-    function () {
-    },
-    function () {
-    },
-    function () {
-    }
 ];
 
 function addTouchEvent(id){

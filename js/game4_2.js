@@ -4,6 +4,7 @@ let _x100;
 let _y100;
 let _x,_y;
 let sensivility=10;
+let eventFunctions;
 
 let imgList1 = ["img/game/clothing/clothing_play_1(옷1).png",
 "img/game/clothing/clothing_play_1(옷2).png",
@@ -14,12 +15,15 @@ let imgList2 = ["img/game/clothing/clothing_play2(모자).png",
 "img/game/clothing/clothing_play2(운동화).png",
 "img/game/clothing/clothing_play2(장갑).png",];
 
+let names=[['coat','shirt','pants','skirt'],['hat','socks','shoes','gloves']]
+
 let eventList = [function(){},function(){},function(){},function(){},function(){}];
 let textOrder=[[2,1,0,3],[3,1,2,0]];
 let setLocation=[[[24,45],[36,44],[50,40],[62,43]],[[30,30],[44,30],[57,30],[68,30]]];
 
 window.addEventListener('load',function(){
     nextpage(0);
+    eventFunctions=new Add_exp(names);
 });
 
 function addTouchEvent(id){
@@ -57,6 +61,7 @@ function handleMove(event){
             console.log('setLocation[mode][elemnum][0]: ', setLocation[mode][elemnum][0]);
             this.style.top=setLocation[mode][elemnum][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
             console.log('setLocation[mode][elemnum][1]: ', setLocation[mode][elemnum][1]);
+            eventFunctions.addExp(mode,selected_id);
         }
     } 
 }

@@ -2,7 +2,7 @@ var mode = 0;
 let selected_id = 0;
 
 let imgList = ['','','',"img/game/transport/transpotation_learn_1(비행기).png",'',"img/game/transport/transpotation_learn_1(트럭).png",'','',"img/game/transport/transpotation_learn_1(지하철).png",'','',"img/game/transport/transpotation_learn_1(오토바이).png","img/game/transport/transpotation_learn_1(택시).png",'',''];
-let imgList_ = ['','','','','',"img/game/transport/transpotation_learn_1(트럭).png",'','',"img/game/transport/transpotation_learn_1(지하철).png",'','',"img/game/transport/transpotation_learn_1(오토바이).png","img/game/transport/transpotation_learn_1(택시).png",'',''];
+let imgList_ = ['','','','img/game/transport/transpotation_2_play(헬리콥터).png','',"img/game/transport/transpotation_2_play(자전거).png",'','img/game/transport/transpotation_2_play(구급차).png',"",'img/game/transport/transpotation_2_play(소방차).png','img/game/transport/transpotation_2_play(배).png',"","",'',''];
 
 let eventList = [
     function () {
@@ -62,28 +62,28 @@ let eventList_ = [
         document.getElementById("content").innerHTML = "";
     },
     function () {
-        document.getElementById("content").innerHTML = "";
+        document.getElementById("content").innerHTML = "ヘリコプター     helicopter";
     },
     function () {
         document.getElementById("content").innerHTML = "";
     },
     function () {
-        document.getElementById("content").innerHTML = "";
+        document.getElementById("content").innerHTML = "じてんしゃ       bicycle  ";
     },
     function () {
         document.getElementById("content").innerHTML = "";
     },
     function () {
-        document.getElementById("content").innerHTML = "";
+        document.getElementById("content").innerHTML = "きゅうきゅうしゃ ambulance";
     },
     function () {
         document.getElementById("content").innerHTML = "";
     },
     function () {
-        document.getElementById("content").innerHTML = "";
+        document.getElementById("content").innerHTML = "しょうぼうしゃ   fire truck  ";
     },
     function () {
-        document.getElementById("content").innerHTML = "";
+        document.getElementById("content").innerHTML = "ふね             ship";
     },
     function () {
         document.getElementById("content").innerHTML = "";
@@ -118,7 +118,6 @@ function handleMove(event){
     
 }
 function handleEnd(event){
-    this.classList.remove("rotateRight");
     selected_id = -1;
 }
 

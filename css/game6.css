@@ -14,7 +14,7 @@
     /* Choose the animation */
     animation-name: right_move;
     /* The animation’s duration */
-    animation-duration: 5000ms;
+    animation-duration: 3000ms;
     /* The number of times we want
         the animation to run */
     animation-iteration-count: 1;
@@ -23,12 +23,13 @@
     animation-direction: normal;
     animation-timing-function: ease-out;
     animation-fill-mode: none;
+    z-index: 1;
 }
 .leftmove:hover{
     /* Choose the animation */
     animation-name: left_move;
     /* The animation’s duration */
-    animation-duration: 5000ms;
+    animation-duration: 3000ms;
     /* The number of times we want
         the animation to run */
     animation-iteration-count: 1;
@@ -37,13 +38,15 @@
     animation-direction: normal;
     animation-timing-function: ease-out;
     animation-fill-mode: none;
+    z-index: 1;
+
 }
 @keyframes right_move {
 	0% {
         left:0%;
 	}
 	100% {
-        left:1000px;
+        left:400px;
 	}
 }
 @keyframes left_move {
@@ -51,6 +54,6 @@
         left:0%;
 	}
 	100% {
-        left:-1000px;
+        left:-400px;
 	}
 }

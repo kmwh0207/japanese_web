@@ -1,90 +1,89 @@
-img/game/transport/transpotation_learn_1(background).png
-var mode = 0;
-let selected_id = 0;
+var mode=0;
+let selected_id = -1;
+let _x100;
+let _y100;
+let _x,_y;
+let sensivility=10;
+let eventFunction;
 
-let imgList1 = ["img/game/fruit/strawberry.png", "img/game/fruit/watermelon.png"];
+let imgList1 = ["img/game/transport/transpotation_learn_1(비행기).png","img/game/transport/transpotation_learn_1(트럭).png","img/game/transport/transpotation_learn_1(지하철).png","img/game/transport/transpotation_learn_1(오토바이).png","img/game/transport/transpotation_learn_1(택시).png"];
+let imgList2 = ['img/game/transport/transpotation_2_play(헬리콥터).png',"img/game/transport/transpotation_2_play(자전거).png",'img/game/transport/transpotation_2_play(구급차).png','img/game/transport/transpotation_2_play(소방차).png','img/game/transport/transpotation_2_play(배).png'];
 
-let eventList1 = [
-    function () {
-        this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "イチゴ";
-    },
-    function () {
-        this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "すいか";
-    }
-];
-
-let imgList2 = ["img/game/fruit/banana.png", "img/game/fruit/graphe.png", "img/game/fruit/persimmon.png"];
-
-let eventList2 = [
-    function () {
-        this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "バナナ";
-    },
-    function () {
-        this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "ぶどう";
-    },
-    function () {
-        this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "かぎ";
-    }
+let eventList_none=[function(){},function(){},function(){},function(){},function(){}];
+let eventList = [
+    ["ひこうき   airplane","トラック   truck","ちかてつ 　subway ", "オートバイ motocycle", "タクシー   taxi"],
+    ["ヘリコプター     helicopter","きゅうきゅうしゃ ambulance", "ふね             ship","しょうぼうしゃ   fire truck  ","じてんしゃ       bicycle  "]
 ];
 
 
-let imgList1_ = ["img/game/fruit/apple.png", "img/game/fruit/orange.png"];
+let textOrder=[[3,2,1,4,0],[0,1,4,2,3]];
+let setLocation=[[[18,18],[50,18],[80,18],[35,55],[65,54]],[[18,18],[50,18],[80,18],[35,55],[65,54]]];
 
-let eventList1_ = [
-    function () {
-        this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "りんご";
-    },
-    function () {
-        this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "オリンジ";
-    }
-];
-
-let imgList2_ = ["img/game/fruit/peach.png", "img/game/fruit/pear.png", "img/game/fruit/pineapple.png"];
-
-let eventList2_ = [
-    function () {
-        this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "もも";
-    },
-    function () {
-        this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "なし";
-    },
-    function () {
-        this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "パイナップル";
-    }
-];
-
-
-window.addEventListener('load', function () {
+window.addEventListener('load',function(){
     nextpage(0);
+    eventFunction=new Add_exp(eventList);
 });
 
-function nextpage(change) {
-    if (change > 0) {
-        mode = mode == 0 ? 1 : 0;
-        /* let elements = document.getElementsByClassName("color");
-        for(let element of elements){
-            element.classList.add("hidden");
-        } */
-    }
-    let elem = document.getElementsByClassName("item");
-    for (let i of elem) {
-        i.innerHTML = "";
-    }
-    if (mode == 0) {
-        new Add_img("container2", imgList1, "opacity", eventList1).apply();
-        new Add_img("container3", imgList2, "opacity", eventList2).apply();
-    } else {
-        new Add_img("container2", imgList1_, "opacity", eventList1).apply();
-        new Add_img("container3", imgList2_, "opacity", eventList2).apply();
+function addTouchEvent(id){
+    let elements = document.getElementById(id).children;
+    console.log(elements[0].offsetWidth);
+    for(let element of elements){
+        element.addEventListener("touchstart",handleStart,false);
+        element.addEventListener("touchmove",handleMove,false);
+        element.addEventListener("touchend",handleEnd,false);
     }
 }
+
+function handleStart(event){
+    this.style.width=this.offsetWidth+"px";
+    this.style.height=this.offsetHeight+"px";
+    this.style.position="fixed";
+    selected_id = this.dataset.num;
+    console.log('selected_id: ', selected_id);
+}
+function handleMove(event){
+    _x = event.changedTouches[0].pageX, _y = event.changedTouches[0].pageY;
+    this.style.left=_x- parseInt(this.offsetWidth/2)+"px";
+    this.style.top=_y-parseInt(this.offsetHeight/2)+"px";
+    _x100=_x/document.body.offsetWidth*100;
+    _y100=_y/document.body.offsetHeight*100;
+    let elemnum=textOrder[mode][selected_id];
+    console.log(_x100+" "+_y100);
+    console.log(setLocation[mode][elemnum][0]+" "+setLocation[mode][elemnum][1]);
+    if(setLocation[mode][elemnum][0]-sensivility<=_x100 && setLocation[mode][elemnum][0]+sensivility>=_x100){
+        if(setLocation[mode][elemnum][1]-sensivility<=_y100 && setLocation[mode][elemnum][1]+sensivility>=_y100){
+            this.classList.add("rotateBoth");
+            this.removeEventListener("touchmove",handleMove,false);
+            this.style.left=setLocation[mode][elemnum][0]/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
+            this.style.top=setLocation[mode][elemnum][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
+            eventFunction.addExp(mode,selected_id);
+        }
+    } 
+}
+
+function handleEnd(event){
+    this.classList.remove("rotateBoth");
+    selected_id = -1;
+}
+
+function nextpage(change){
+    if(change>0) {
+        mode = mode == 0? 1:0;
+    }
+    let elem = document.getElementsByClassName("item");
+    for(let i of elem){
+        i.removeAttribute('style');
+        i.innerHTML="";
+    }
+    addTouchEvent("container5");
+    if(mode == 0){
+        document.getElementById("background").setAttribute("src","img/game/transport2/transpotation_play_1.png");
+        document.getElementById("background").classList.add('opacity');
+        new Add_img("container5",imgList1,"fadeIn",eventList_none).apply();
+    }else{
+        document.getElementById("background").setAttribute("src","img/game/transport2/transpotation_play_2.png");
+        document.getElementById("background").classList.add('opacity');
+        new Add_img("container5",imgList2,"fadeIn",eventList_none).apply();
+    }
+}
+

@@ -16,13 +16,46 @@ let imgList2 = ["img/game/drink/レモネード.png",
 "img/game/drink/りんごジュス.png",
 "img/game/drink/みず.png"];
 
-let eventList = [function(){},function(){},function(){},function(){},function(){}];
+let eventList_none = [function(){},function(){},function(){},function(){},function(){}];
 let textOrder=[[3,4,0,1,2],[0,3,1,2,4]];
 let setLocation=[[[18,29],[51,29],[82,29],[33,64],[73,63]],[[18,29],[51,29],[82,29],[33,64],[73,63]]];
+let eventList = [
+    [
+        function () {
+            document.getElementById("content").innerHTML = "ホットチョコレート hot chocolate";
+        },
+        function () {
+            document.getElementById("content").innerHTML = "コーヒー           coffee";
+        },
+        function () {
+            document.getElementById("content").innerHTML = "ぎゅうにゅう       milk";
+        },
+        function () {
+            document.getElementById("content").innerHTML = "とうにゅう         soybean milk";
+        },
+        function () {
+            document.getElementById("content").innerHTML = "おちゃ             tea";
+        }
+    ],
+    [
+        function () {
+            document.getElementById("content").innerHTML = "レモネード         lemonade";
+        },
+        function () {
+            document.getElementById("content").innerHTML = "アイスティー       icetea";
+        },
+        function () {
+            document.getElementById("content").innerHTML = "オレンジジュース   orangejuice";
+        },
+        function () {
+            document.getElementById("content").innerHTML = "りんごジュス       apple juice";
+        },
+        function () {
+            document.getElementById("content").innerHTML = "みず               water";
+        }
+    ]
+];
 
-window.addEventListener('load',function(){
-    nextpage(0);
-});
 window.addEventListener('load',function(){
     nextpage(0);
 });
@@ -59,6 +92,7 @@ function handleMove(event){
             this.removeEventListener("touchmove",handleMove,false);
             this.style.left=setLocation[mode][elemnum][0]/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
             this.style.top=setLocation[mode][elemnum][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
+            eventList[mode][selected_id]();
         }
     } 
 }
@@ -80,11 +114,11 @@ function nextpage(change){
     if(mode == 0){
         document.getElementById("background").setAttribute("src","img/game/drink/drinks_play_1(background).png");
         document.getElementById("background").classList.add('opacity');
-        new Add_img("container5",imgList1,"fadeIn",eventList).apply();
+        new Add_img("container5",imgList1,"fadeIn",eventList_none).apply();
     }else{
         document.getElementById("background").setAttribute("src","img/game/drink/drinks_play_2(background).png");
         document.getElementById("background").classList.add('opacity');
-        new Add_img("container5",imgList2,"fadeIn",eventList).apply();
+        new Add_img("container5",imgList2,"fadeIn",eventList_none).apply();
     }
 }
 

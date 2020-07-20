@@ -13,4 +13,7 @@ window.addEventListener('load',function(){
         count = (count+1)%elements.length;
         console.log(count);
     },1000);
+    var img = document.getElementById("background");
+    document.body.style.width = img.width.toString() + "px"
+    document.body.style.height = img.height.toString() + "px"
 });

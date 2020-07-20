@@ -4,6 +4,7 @@ let _x100;
 let _y100;
 let _x,_y;
 let sensivility=10;
+let eventFunctions;
 
 let imgList = ["img/game/family/family_play_olderbrother.png", 
 "img/game/family/family_play_eldersister.png", 
@@ -11,6 +12,7 @@ let imgList = ["img/game/family/family_play_olderbrother.png",
 "img/game/family/family_play_mother.png", 
 "img/game/family/family_play_youngerbrother.png",
 "img/game/family/family_play_youngersister.png"];
+let names=['older brother','elder sister','father','mother','younger brother','younger sister'];
 
 let eventList = [function(){},function(){},function(){},function(){},function(){},function(){}];
 let textOrder=[4,2,1,0,5,3];
@@ -18,10 +20,8 @@ let setLocation=[[9,30],[25,19],[42,26],[58,18],[74,40],[91,30]];
 
 window.addEventListener('load',function(){
     nextpage(0);
-});
-window.addEventListener('load',function(){
-    nextpage(0);
     addTouchEvent("container6");
+    eventFunctions.addExp_(selected_id);
 });
 
 function addTouchEvent(id){

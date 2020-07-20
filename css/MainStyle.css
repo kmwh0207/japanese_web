@@ -22,13 +22,19 @@ html, body, #index{
     z-index: -3000;
 }
 .background{
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
-.item>*:not(.background){
+.item>*:not(.background):not(.height_center){
     max-width: 100%;
     height: auto;
     text-align: center;
+}
+.item.height_center>*:not(.background){
+    max-width: 100%;
+    max-height: 100%;
+    text-align: center;
+    margin: auto;
 }
 .container {
     display: grid;

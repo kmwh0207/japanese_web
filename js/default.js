@@ -1,14 +1,20 @@
 let URLSearch;
 window.onload = function () {
-    var img = document.getElementById("background");
+    /* var img = document.getElementById("background");
     document.body.style.width = img.width.toString() + "px"
-    document.body.style.height = img.height.toString() + "px"
+    document.body.style.height = img.height.toString() + "px" */
     URLSearch = new URLSearchParams(location.search);
+    let btList=document.getElementsByClassName("bt");
+    Array.from(btList).forEach(function (elem) {
+        elem.addEventListener("click", function () {
+            Array.from(document.getElementsByClassName("bt")).forEach(function(t){console.log(t);t.classList.contains("hidden") ? t.classList.remove("hidden") : t.classList.add("hidden");});
+        });
+    });
 }
 /*document.body.style.width=window.innerWidth.toString()+"px"
 document.body.style.height=window.innerHeight.toString()+"px"*/
 
-function searchParam(key){
+function searchParam(key) {
     return new URLSearch.get(key);
 }
 
@@ -19,16 +25,16 @@ function css(elem, prop, val) {
     elem.style[prop] = val;
 }
 
-function Add_action(id,action){
-    let elements=document.getElementById(id).children;
-    for(let i of elements){
-        i.addEventListener('click',action,false);
-    } 
+function Add_action(id, action) {
+    let elements = document.getElementById(id).children;
+    for (let i of elements) {
+        i.addEventListener('click', action, false);
+    }
 }
 
 class Add_img {
-    #_id;  
-    #_img_list; //private
+    #_id;
+    #_img_list; // private
     #_anim;
     #_event;
     constructor(id, img_list, anim, event) {
@@ -43,15 +49,15 @@ class Add_img {
     }
     apply() {
         let elements = document.getElementById(this._id).children;
-        for (let num=0; num<elements.length; num++) {
+        for (let num = 0; num < elements.length; num++) {
             let element = elements[num];
-            element.removeAttribute('style'); //test
-            element.innerHTML=""; //test
-            element.setAttribute("data-num",num);
+            element.removeAttribute('style'); // test
+            element.innerHTML = ""; // test
+            element.setAttribute("data-num", num);
             let newElem = document.createElement('img');
-            newElem.addEventListener('click',this._event[num],false);
+            newElem.addEventListener('click', this._event[num], false);
             newElem.src = this._img_list[num];
-            this._anim == "" ? "":newElem.classList.add(this._anim);
+            this._anim == "" ? "" : newElem.classList.add(this._anim);
             console.log(num);
             element.appendChild(newElem);
         }
@@ -60,8 +66,8 @@ class Add_img {
 }
 
 class Add_text {
-    #_id;  
-    #_img_list; //private
+    #_id;
+    #_img_list; // private
     #_anim;
     #_event;
     constructor(id, text_list) {
@@ -74,11 +80,11 @@ class Add_text {
     }
     apply() {
         let elements = document.getElementById(this._id).children;
-        for (let num=0; num<elements.length; num++) {
+        for (let num = 0; num < elements.length; num++) {
             let element = elements[num];
-            element.setAttribute("data-num",num);
+            element.setAttribute("data-num", num);
             let newElem = document.createElement('p');
-            newElem.innerHTML="</br>"+this._text_list[num];
+            newElem.innerHTML = "</br>" + this._text_list[num];
             console.log(num);
             element.appendChild(newElem);
         }
@@ -86,20 +92,34 @@ class Add_text {
     }
 }
 
-class Add_color{
-    constructor(id,color){
-        if(!isArrayLike(color)){
+class Add_color {
+    constructor(id, color) {
+        if (!isArrayLike(color)) {
             console.log("is not array");
         }
-        this._id=id;
-        this._color=color;
+        this._id = id;
+        this._color = color;
     }
-    apply(addclass){
+    apply(addclass) {
         let elements = document.getElementById(this._id).children;
-        for(let num in this._color){
+        for (let num in this._color) {
             let element = elements[num];
             element.style.background = this._color[num];
-            if(addclass !== undefined) element.classList.add(addclass);
+            if (addclass !== undefined) 
+                element.classList.add(addclass);
+            
         }
+    }
+}
+
+class Add_exp {
+    constructor(functionList) {
+        this.functions = functionList;
+    }
+    addExp(mode, num) {
+        document.getElementById("content").innerHTML = this.functions[mode][num];
+    }
+    addExp_(num) {
+        document.getElementById("content").innerHTML = this.functions[num];
     }
 }

@@ -41,4 +41,7 @@ function(){movepage("game8")}]
 window.addEventListener('load',function(){
     let img_run = new Add_img("container",imgList,"fadeIn",eventList);
     img_run.apply();
+    var img = document.getElementById("background");
+    document.body.style.width = img.width.toString() + "px"
+    document.body.style.height = img.height.toString() + "px"
 });
