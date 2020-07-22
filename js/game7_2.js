@@ -58,7 +58,7 @@ function handleMove(event){
             this.style.top=setLocation[mode][elemnum][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
             eventFunction.addExp(mode,selected_id);
         }
-    } 
+    }
 }
 
 function handleEnd(event){
