@@ -12,18 +12,7 @@ var movepage = function(page){
     document.getElementById("finger1").classList.add("rotateRight");
     document.getElementById("finger2").classList.add("rotateLeft");
     new Promise(function(resolve,reject){
-        document.getElementById("choice").classList.add("fadeIn");
-        document.getElementById("choice").addEventListener("touchend",function(e){
-            e.preventDefault();
-            console.log("touch");
-            document.body.removeChild(document.getElementById("go_action"));
-            document.getElementById("go_home").classList.remove("none");
-            if(e.changedTouches[0].pageX < document.getElementById("background").width/2){
-                resolve("");
-            }else{
-                resolve("_2");
-            }
-        })
+        resolve("");
     }).then(function(result){
         document.getElementById("frame").setAttribute("src",page+result+".html");
         document.getElementById("frame").style.zIndex=500;
