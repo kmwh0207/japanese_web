@@ -1,16 +1,12 @@
-let imgList = ["img/mainmenu/1.color_eicon.png",
-"img/mainmenu/2.fruit_eicon.png",
-"img/mainmenu/3.family_eicon.png",
-"img/mainmenu/4.clothing_eicon.png",
-"img/mainmenu/5.drinks_eicon.png",
-"img/mainmenu/6.transpotation_eicon.png",
-"img/mainmenu/7.food_eicon.png",
-"img/mainmenu/8.body_parts_eicon.png"]
+let imgList = ["img/mainmenu/메인화면_3(아이콘)_1.png",
+"img/mainmenu/메인화면_3(아이콘)_2.png",
+"img/mainmenu/메인화면_3(아이콘)_3.png",
+"img/mainmenu/메인화면_3(아이콘)_4.png",
+"img/mainmenu/메인화면_3(아이콘)_5.png",
+"img/mainmenu/메인화면_3(아이콘)_6.png",
+]
 
 var movepage = function(page){
-    document.getElementById("choice").style.display="block";
-    document.getElementById("finger1").classList.add("rotateRight");
-    document.getElementById("finger2").classList.add("rotateLeft");
     new Promise(function(resolve,reject){
         resolve("");
     }).then(function(result){
@@ -20,14 +16,13 @@ var movepage = function(page){
     });
 }
 
-let eventList = [function(){movepage("game1")},
-function(){movepage("game2")},
-function(){movepage("game3")},
-function(){movepage("game4")},
-function(){movepage("game5")},
-function(){movepage("game6")},
-function(){movepage("game7")},
-function(){movepage("game8")}]
+let eventList = [function(){movepage("subgame1")},
+function(){movepage("subgame2")},
+function(){movepage("subgame3")},
+function(){movepage("subgame4")},
+function(){movepage("subgame5")},
+function(){movepage("subgame6")}
+]
 
 window.addEventListener('load',function(){
     let img_run = new Add_img("container",imgList,"fadeIn",eventList);

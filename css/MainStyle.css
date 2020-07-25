@@ -59,6 +59,12 @@ html, body, #index{
     max-height: 30%;
     z-index: 1000;
 }
+.bt_noAction{
+    position: absolute;
+    width: 10%;
+    max-height: 30%;
+    z-index: 1000;
+}
 .bttop{
     top: 2%;
 }
