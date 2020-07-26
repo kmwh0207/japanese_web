@@ -163,14 +163,12 @@ window.addEventListener('load',function(){
         arrow.style.position='fixed'; */
         arrow_location=arrow.getBoundingClientRect().left+(arrow.offsetWidth/2);
         balloon_location.forEach(function(value,index){
-            console.log('value+balloon_size: ', value, value+balloon_size);
-            console.log('arrow_location: ', arrow_location);
-            console.log('arrow_location<(value+balloon_size) && arrow_location>(value) : ', arrow_location<(value+balloon_size) && arrow_location>(value) );
             if(arrow_location<(value+balloon_size) && arrow_location>(value) ){
                 let balloon = document.getElementsByClassName('item')[index];
                 heatAnimation(balloon);
                 eventFunctions.addExp_(index); //성공했을때
                 score= score+20;
+                balloon_location.splice(index,1,-1000);
             }
         });
         arrowCount++;
@@ -193,34 +191,34 @@ window.addEventListener('load',function(){
 
 
 
-function nextpage(event,num){
+function nextpage(event,num){ 
     score=0;
     arrowCount=0;
     document.getElementById("result").classList.add("none");
     new Promise(function(resolve,reject){
         if(num == 0){
-            this.mode = 0;
+            mode = 0;
         }else{
-            event.preventDefault();
+            //event.stopPropagation(); 잘못된 사용
             let elem = document.getElementsByClassName("item");
             for(let i of elem){
                 i.innerHTML="";
             }
             if(num == 1){
-                this.mode= (this.mode+1)%this.total_page;
+                mode= (mode+1)%total_page;
             }else{
-                this.mode= Math.abs((this.mode-1)%this.total_page);
+                mode= Math.abs((mode-1)%total_page);
             }
         }
         let random_num=Math.floor(Math.random()*6);
-        let img_run = new Add_img("container5",imgList[this.mode].slice(random_num,random_num+5),"no",eventList[this.mode].slice(random_num,random_num+5));
+        let img_run = new Add_img("container5",imgList[mode].slice(random_num,random_num+5),"no",eventList[mode].slice(random_num,random_num+5));
         img_run.apply();
-        this.balloon_location=[];
-        this.names=[];
-        names=namelist[this.mode].slice(random_num,random_num+5);
+        balloon_location=[];
+        names=[];
+        names=namelist[mode].slice(random_num,random_num+5);
         eventFunctions=new Add_exp(names);
         Array.prototype.forEach.call(document.getElementsByClassName('item'),function(ball){
-            this.balloon_location.push(ball.getBoundingClientRect().left);
+            balloon_location.push(ball.getBoundingClientRect().left);
         });
         resolve();
     }).then(function(resolve){
