@@ -1,4 +1,4 @@
-#container3 {
+#container10 {
     position: absolute;
     top: 40%;
     display: grid;
@@ -20,4 +20,28 @@
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(auto-fit,minmax(10%,auto));
     grid-gap: 2%;
+}
+.item{
+    position: fixed;
+    width:12%;
+    height:17%;
+}
+#menu {
+    position: absolute;
+    top: 0%;
+    left:0%;
+    display: grid;
+    width:20%;
+    height:10%;
+    margin: 0%;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto-fit,minmax(10%,auto));
+}
+.button{
+    width:100%;
+    height:100%;
+}
+.button>*{
+    width:100%;
+    height:100%;
 }

@@ -342,24 +342,19 @@
 /*test 튕기는 공*/
 @keyframes ball {
   0% {
-      top:0px;
+      bottom:50px;
   }
   95% {
       width: 100px;
   }
   to {
-      top:300px;
+      bottom:0px;
       width:115px;
       height:90px
   } 
 }
-div.ball{
-position:relative;
-left: 100px;
-top:0;
-width:100px;
-height:100px;
+.ball{
 border-radius:50%;
-background:#000;
-animation:ball 1s ease-in Infinite Alternate;
+backgroun:white;
+animation:ball 0.8s ease-in Infinite Alternate;
 }

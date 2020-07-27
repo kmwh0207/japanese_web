@@ -4,7 +4,7 @@
     box-sizing: inherit;
 }
 html{
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 h1 {
     background-color: #EFFBF5;
@@ -71,15 +71,31 @@ html, body, #index{
 }
 .bttop{
     top: 2%;
+    position: absolute;
+    width: 10%;
+    max-height: 30%;
+    z-index: 1000;
 }
 .btbottom{
     bottom: 2%;
+    position: absolute;
+    width: 10%;
+    max-height: 30%;
+    z-index: 1000;
 }
 .btleft{
     left: 2%;
+    position: absolute;
+    width: 10%;
+    max-height: 30%;
+    z-index: 1000;
 }
 .btright{
     right: 2%;
+    position: absolute;
+    width: 10%;
+    max-height: 30%;
+    z-index: 1000;
 }
 iframe{
     position: absolute;
@@ -105,4 +121,8 @@ div#content_box{
     width:100%;
     text-align: center;
     z-index:-300;
+}
+*{
+    background-size: contain; 
+    background-repeat:no-repeat;
 }

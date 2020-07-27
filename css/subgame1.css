@@ -20,3 +20,21 @@
     grid-template-rows: repeat(auto-fit,minmax(10%,auto));
     padding: 0% 10% 0% 10%;
 }
+
+#menu {
+    position: absolute;
+    top: 0%;
+    left:0%;
+    display: grid;
+    width:20%;
+    max-height:30%;
+    margin: 0%;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto-fit,minmax(10%,auto));
+}
+.button{
+    width:100%;
+}
+.button>*{
+    width:100%;
+}

@@ -78,8 +78,8 @@ let mainAnim=["img/game/treasure/인사말손가락애니_1.png","img/game/treas
 let names=['정답!','훌륭해요!','','','','','','','','']
 
 let eventList = [function(){},function(){},function(){},function(){}];
-let correctNum=[0,0,0,0,0,0,0,0,0,0];
-let setLocation=[[57,41],[42,41],[57,41],[],[12,41],[92,41],[57,41],[30,44],[30,44],[57,41],[57,41]];
+let correctNum=[2,0,3,0,1,3,0,1,0,3];
+let setLocation=[[57,41],[42,41],[57,41],[],[12,41],[92,41],[57,41],[30,44],[30,44],[19,41],[57,41]];
 
 window.addEventListener('load',function(){
     nextpage(0);
