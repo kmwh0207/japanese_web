@@ -4,12 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>일본어 교육 앱</title>
-    <link rel="stylesheet" type="text/css" href="css/materialize.css">
-    <link rel="stylesheet" type="text/css" href="css/materialize_sub.css">
     <link rel="stylesheet" type="text/css" href="css/MainStyle.css">
     <link rel="stylesheet" type="text/css" href="css/anim.css">
     <link rel="stylesheet" href="css/main1.css">
-    <script src="js/materialize.js"></script>
     <script src="js/type_check.js"></script>
     <script src="js/default.js"></script>
     <script src="js/cuma_anim.js"></script>
@@ -18,13 +15,14 @@
 </head>
 
 <body>
+    <audio id='audio_play' src='img/game/봄소풍(편집).wav'></audio> 
     <div id="index" class="field">
         <img id="background" class="background " src="img/index/main_background.png" alt="">
-        <div class="row bottom">
-            <div class="col s12"><img src="img/index/music_button.png" alt="" onclick=""></div>
-            <div class="col s10"><img src="img/index/explain_button.png" alt="" onclick=""></div>
-        <div class="col s1"><img src="img/index/start2.png" alt="" onclick="location.href='./main2.html';"></div>
-        </div>
+            <div class="bt btleft btbottom" style="bottom:20%;"><img src="img/index/music_button.png" alt="" onclick="stop()"></div>
+            <div class="bt btleft btbottom"><img src="img/index/explain_button.png" alt="" onclick="location.href='./license.html'"></div>
+            <div class="bt btright btbottom"><img src="img/index/start2.png" alt="" onclick="location.href='./main2.html';"></div>
+    </div>
+
     </div>
     <img class="none cuma" src="img/index/cuma1.png" alt="">
     <img class="none cuma" src="img/index/cuma2.png" alt="">

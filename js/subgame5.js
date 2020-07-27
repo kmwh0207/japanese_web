@@ -6,6 +6,7 @@ let _x,_y;
 let timer;
 let sensivility=10;
 let total_page=10;
+let is_correct=0;
 let eventFunctions;
 let imgList = [
     [
@@ -131,6 +132,7 @@ function handleMove(event){
                 this.style.top=setLocation[mode][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
                 console.log('setLocation[mode][1]: ', setLocation[mode][1]);
                 eventFunctions.addExp_(mode);
+                is_correct=1;
             }
         } 
     }else{
@@ -140,6 +142,8 @@ function handleMove(event){
 function handleEnd(event){
     this.classList.remove("rotateBoth");
     selected_id = -1;
+    is_correct==0? nextpage(0):null;
+    is_correct=0;
 }
 
 function nextpage(num){

@@ -16,4 +16,8 @@ window.addEventListener('load',function(){
     var img = document.getElementById("background");
     document.body.style.width = img.width.toString() + "px"
     document.body.style.height = img.height.toString() + "px"
+    document.getElementById('audio_play').play();
 });
+function stop(){
+    document.getElementById('audio_play').pause();
+}

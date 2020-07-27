@@ -152,7 +152,11 @@ function heatAnimation(balloon){
 window.addEventListener('load',function(){
     nextpage(undefined,0);
     let arrow=document.getElementById("arrow");
-    document.body.addEventListener("touchend",function(){
+    document.getElementById("index").addEventListener('touchstart',function(){
+        document.getElementById("content").innerHTML = '손을 눌렀다 때면 화살이 나갑니다.';
+    });
+    document.getElementById('index').addEventListener("touchend",function(){
+        document.getElementById("content").innerHTML = '실패! 다시 시도해 보세요.';
         document.getElementById('arrow_div').style.animationPlayState="paused";
         arrow.classList.add("arrow_anim");
         /* arrow.setAttribute("style","");
@@ -199,7 +203,7 @@ function nextpage(event,num){
         if(num == 0){
             mode = 0;
         }else{
-            //event.stopPropagation(); 잘못된 사용
+            event.stopPropagation();
             let elem = document.getElementsByClassName("item");
             for(let i of elem){
                 i.innerHTML="";
