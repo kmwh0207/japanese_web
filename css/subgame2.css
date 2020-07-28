@@ -9,33 +9,35 @@
     grid-template-rows: repeat(auto-fit,minmax(10%,auto));
     padding: 0% 10% 0% 10%;
 }
-#menu {
+#container10_{
     position: absolute;
-    top: 5%;
-    left: 4%;
+    left: 31%;
+    top: 9%;
     display: grid;
-    width:40%;
-    padding: 0% 0% 0% 0%;
+    width: 21%;
+    height: 79%;
     margin: 0%;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(auto-fit,minmax(10%,auto));
-    grid-gap: 2%;
+    padding: 0% 0% 0% 0%;
+    z-index:2;
 }
 .item{
     position: fixed;
-    width:12%;
+    width:8%;
     height:17%;
 }
 #menu {
     position: absolute;
-    top: 0%;
-    left:0%;
+    top: 15%;
+    left: 43%;
     display: grid;
-    width:20%;
-    height:10%;
+    width: 14%;
+    height: 61%;
     margin: 0%;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(1,1fr);
     grid-template-rows: repeat(auto-fit,minmax(10%,auto));
+    grid-row-gap: 10%;
 }
 .button{
     width:100%;
@@ -44,4 +46,44 @@
 .button>*{
     width:100%;
     height:100%;
+}
+.opacityAlternate2 {
+    /* Choose the animation */
+    animation-name: Opacity2;
+    /* The animation’s duration */
+    animation-duration: 1000ms;
+    /* The number of times we want
+        the animation to run */
+    animation-iteration-count: 1;
+    /* Causes the animation to reverse
+        on every odd iteration */
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }  
+  @keyframes Opacity2 {
+	0% {
+        content:url("../img/game/refrigerator/냉장고애니_1.png");
+        opacity: 0%;
+    }
+    20%{
+        content:url("../img/game/refrigerator/냉장고애니_1.png");
+        opacity: 100%;
+    }
+    40%{
+        content:url("../img/game/refrigerator/냉장고애니_1.png");
+        opacity: 0%;
+    }
+	60% {
+        content:url("../img/game/refrigerator/냉장고애니_2.png");
+        opacity: 0%;
+    }
+    80% {
+        content:url("../img/game/refrigerator/냉장고애니_2.png");
+        opacity: 100%;
+    }
+    100% {
+        content:url("../img/game/refrigerator/냉장고애니_2.png");
+        opacity: 0%;
+	}
 }

@@ -99,8 +99,12 @@ function playgame(){
     document.getElementsByClassName("item_")[correct+1].style.backgroundImage=`url('${imgList[num].slice(0, -4) + "_.png"}')`;
     console.log('correct+1: ', correct+1);
     console.log('imgList[num].slice(0, -4) + "_.png": ', imgList[num].slice(0, -4) + "_.png");
-    document.getElementsByClassName("item_")[Math.abs(correct+1)%3+1].style.backgroundImage=`url('${imgList[(Math.abs(num-3)==num)||(Math.abs(num-3)==0)?Math.abs(num-4):Math.abs(num-3)].slice(0, -4) + "_.png"}')`;
-    document.getElementsByClassName("item_")[Math.abs(correct+2)%3+1].style.backgroundImage=`url('${imgList[(Math.abs(num-5)==num)||(Math.abs(num-5)==0)?Math.abs(num-1):Math.abs(num-5)].slice(0, -4) + "_.png"}')`;
+    let num1=(Math.abs(num-3))+1;
+    console.log('num1: ', num1);
+    let num2=(Math.abs(num-6))+1;
+    console.log('num2: ', num2);
+    document.getElementsByClassName("item_")[Math.abs(correct+1)%3+1].style.backgroundImage=`url('${imgList[num1!=num?num1:Math.abs(num-3)].slice(0, -4) + "_.png"}')`;
+    document.getElementsByClassName("item_")[Math.abs(correct+2)%3+1].style.backgroundImage=`url('${imgList[num2!=num?num2:Math.abs(num-6)].slice(0, -4) + "_.png"}')`;
     document.getElementsByClassName("item_")[correct+1].addEventListener('touchend',function(){
         document.getElementsByClassName("item_")[0].style.backgroundImage=`url('${imgList[num].slice(0, -4) + "_.png"}')`;
         document.getElementsByClassName("item_")[0].classList.add("opacity");/*정답 맞출경우*/
@@ -109,5 +113,6 @@ function playgame(){
             document.getElementsByClassName("item_")[0].classList.remove("opacity");
             playgame();
         }, 2000);
+        this.removeEventListener("touchend",arguments.callee);
     })
 }

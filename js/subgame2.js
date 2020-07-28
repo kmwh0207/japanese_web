@@ -2,16 +2,33 @@
 
 var mode = 0;
 let selected_id = 0;
-let total=10;
+let total=0;
+let count=0;
 let fruit_num=0;
+let eventFunction;
+let eventList = [''];
+let numList=["img/game/refrigerator/num/1.png","img/game/refrigerator/num/2.png","img/game/refrigerator/num/3.png","img/game/refrigerator/num/4.png","img/game/refrigerator/num/5.png","img/game/refrigerator/num/6.png","img/game/refrigerator/num/7.png","img/game/refrigerator/num/8.png","img/game/refrigerator/num/9.png","img/game/refrigerator/num/10.png"];
 let imgList=["img/game/refrigerator/1.png","img/game/refrigerator/2.png","img/game/refrigerator/3.png","img/game/refrigerator/4.png","img/game/refrigerator/5.png","img/game/refrigerator/6.png","img/game/refrigerator/7.png","img/game/refrigerator/8.png","img/game/refrigerator/9.png","img/game/refrigerator/10.png","img/game/refrigerator/11.png","img/game/refrigerator/12.png"];
+let setLocation=[46,46];
+let sensivility=10;
 window.addEventListener('load', function () {
+    eventFunction=new Add_exp(eventList);
     nextpage(0);
+    document.getElementById("anim").addEventListener("animationend",function(){
+        document.getElementById("anim").classList.remove("opacityAlternate2");
+    })
 });
 
 function nextpage(change) {
     addTouchEvent('container10');
+    count=0;
+    document.getElementById("content").innerHTML="";
+    document.getElementById('opendoor').classList.add('none');
+    document.getElementById("container10_").classList.add("none");
+    document.getElementById('container10').classList.remove('none');
+
     total=Math.floor(Math.random()*10)+1;
+    let random_num=Math.floor(Math.random()*10);
     console.log('total: ', total);
     
     if (change > 0) {
@@ -24,13 +41,13 @@ function nextpage(change) {
     let elem = document.getElementsByClassName("item");
     for (let i of elem) {
         i.innerHTML = "";
+        i.classList.remove("none");
     }
     if (mode == 0) {
     } else {
     }
     for(let i=0; i<total; i++){
-        console.log('appl');
-        document.getElementsByClassName('item')[i].style.backgroundImage="url("+imgList[fruit_num]+")";
+        document.getElementsByClassName('item')[(random_num+i)%10].style.backgroundImage="url("+imgList[fruit_num]+")";
     }
 }
 
@@ -58,26 +75,63 @@ function handleMove(event){
     _x100=_x/document.body.offsetWidth*100;
     _y100=_y/document.body.offsetHeight*100;
     console.log(_x100+" "+_y100);
-    if(selected_id==correctNum[mode]){
-        if(setLocation[mode][0]-sensivility<=_x100 && setLocation[mode][0]+sensivility>=_x100){
-            if(setLocation[mode][1]-sensivility<=_y100 && setLocation[mode][1]+sensivility>=_y100){
+        if(setLocation[0]-sensivility<=_x100 && setLocation[0]+sensivility>=_x100){
+            if(setLocation[1]-sensivility<=_y100 && setLocation[1]+sensivility>=_y100){
                 this.classList.add("rotateBoth");
                 this.removeEventListener("touchmove",handleMove,false);
-                this.style.left=setLocation[mode][0]/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
-                console.log('setLocation[mode][0]: ', setLocation[mode][0]);
-                this.style.top=setLocation[mode][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
-                console.log('setLocation[mode][1]: ', setLocation[mode][1]);
-                eventFunctions.addExp_(mode);
-                is_correct=1;
+                this.style.left=setLocation[0]/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
+                console.log('setLocation[0]: ', setLocation[0]);
+                this.style.top=setLocation[1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
+                console.log('setLocation[1]: ', setLocation[1]);
+                eventFunction.addExp_(mode);
+                console.log(selected_id);
+                this.classList.add("none");
+                document.getElementById("anim").classList.add("opacityAlternate2");
+                count++;
             }
         } 
-    }else{
-        
-    }
 }
 function handleEnd(event){
     this.classList.remove("rotateBoth");
     selected_id = -1;
-    is_correct==0? nextpage(0):null;
-    is_correct=0;
+    if(count>=total){
+        document.getElementById("content").innerHTML="과일은 총 몇 개였나요?";
+        playgame();
+    }
+}
+
+function playgame(){
+    document.getElementById('menu').classList.remove('none');
+    document.getElementById('container10').classList.add('none');
+    let correct=total-1;
+    let num1=Math.floor(Math.random()*10);
+    let num2=Math.floor(Math.random()*10);
+    while(true){
+        if(num1!=correct && num2!=correct && num1 != num2) break;
+        num1=Math.floor(Math.random()*10);
+        num2=Math.floor(Math.random()*10);
+    }
+    let correct_location=Math.floor(Math.random()*3);
+    let location1=Math.floor(Math.random()*3);
+    let location2=Math.floor(Math.random()*3);
+    while(true){
+        if(location1!=correct_location && location2!=correct_location && location1 != location2) break;
+        location1=Math.floor(Math.random()*3);
+        location2=Math.floor(Math.random()*3);
+    }
+    document.getElementsByClassName("button")[location1].style.backgroundImage=`url('${numList[num1]}')`;
+    document.getElementsByClassName("button")[location2].style.backgroundImage=`url('${numList[num2]}')`;
+    document.getElementsByClassName("button")[correct_location].style.backgroundImage=`url('${numList[correct]}')`;
+    console.log('run');
+    document.getElementsByClassName("button")[correct_location].addEventListener('touchstart',function(){
+        music('img/game/refrigerator/button-28.mp3');
+        document.getElementById('menu').classList.add('none');
+        document.getElementById('opendoor').classList.remove('none');
+        this.removeEventListener('touchstart',arguments.callee);
+        document.getElementById("container10_").classList.remove("none");
+        for(let i=0; i<total; i++){
+            document.getElementsByClassName('item2')[i].style.backgroundImage="url("+imgList[fruit_num]+")";
+        }
+        document.getElementsByClassName('item2')[10].style.backgroundImage="url("+numList[correct]+")";
+    });
 }

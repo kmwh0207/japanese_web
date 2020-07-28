@@ -123,3 +123,10 @@ class Add_exp {
         document.getElementById("content").innerHTML = this.functions[num];
     }
 }
+
+function music(src){
+    document.body.click();
+    var audio = new Audio();
+    audio.src = src;
+    audio.play();
+}
