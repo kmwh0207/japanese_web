@@ -34,6 +34,17 @@ let imgList_balloon2 = ["img/game/color/yellowb.png",
 "img/game/color/brownb.png"
 ];
 
+let soundList = ["img/game/color/red.mp3",
+"img/game/color/green.mp3",
+"img/game/color/blue.mp3",
+"img/game/color/orange.mp3",
+"img/game/color/purple.mp3",
+"img/game/color/yellow.mp3",
+"img/game/color/pink.mp3",
+"img/game/color/white.mp3",
+"img/game/color/black.mp3",
+"img/game/color/brown.mp3"];
+
 let eventList_balloon2 = [function(){},function(){},function(){},function(){},function(){}];
 
 window.addEventListener('load',function(){
@@ -50,6 +61,9 @@ function play_anim(elem,name) {
     element.style.left = _x;
     element.classList.add("moveUp");
     element.addEventListener('animationend', onTransitionEnd, false);
+    let selected_id2= mode==1?parseInt(selected_id)+5:parseInt(selected_id);
+    console.log('selected_id2: ', selected_id2);
+    music(soundList[selected_id2]);
     function onTransitionEnd() {
         element.classList.add("none");
         element.classList.remove("moveUp");

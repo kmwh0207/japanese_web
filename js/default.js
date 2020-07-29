@@ -10,6 +10,14 @@ window.onload = function () {
             Array.from(document.getElementsByClassName("bt")).forEach(function(t){console.log(t);t.classList.contains("hidden") ? t.classList.remove("hidden") : t.classList.add("hidden");});
         });
     });
+    Array.from(document.getElementsByClassName("bt")).forEach(function(e){
+        console.log(e);
+        e.addEventListener('touchend',function(){console.log("효과음"); music(defaultSound[0]);});
+    })/*기본 사운드*/
+    Array.from(document.getElementsByClassName("bt_")).forEach(function(e){
+        console.log(e);
+        e.addEventListener('touchend',function(){console.log("효과음"); music(defaultSound[0]);});
+    })/*기본 사운드*/
 }
 /*document.body.style.width=window.innerWidth.toString()+"px"
 document.body.style.height=window.innerHeight.toString()+"px"*/
@@ -125,8 +133,10 @@ class Add_exp {
 }
 
 function music(src){
-    document.body.click();
+    console.log(src);
     var audio = new Audio();
     audio.src = src;
     audio.play();
 }
+
+let defaultSound=["img/game/btsound.wav"];

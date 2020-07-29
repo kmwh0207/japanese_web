@@ -11,15 +11,14 @@ window.addEventListener('load',function(){
         elements[count].classList.remove("none");
         elements[count].classList.add("opacityAlternate");
         count = (count+1)%elements.length;
-        console.log(count);
+        
     },1000);
     var img = document.getElementById("background");
     document.body.style.width = img.width.toString() + "px"
     document.body.style.height = img.height.toString() + "px"
-    document.body.click();
     setTimeout(() => {
-        document.getElementById('audio_play').play()
-    }, 1000);
+        document.getElementById('audio_play').play();
+    }, 2000);
 });
 function stop(){
     document.getElementById('audio_play').pause();

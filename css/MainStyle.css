@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
     font-family: "Bitstream Vera Serif Bold";
     src: url("http://developer.mozilla.org/@api/deki/files/2934/=VeraSeBd.ttf");
   }
   
-  body { font-family: "Bitstream Vera Serif Bold", serif }
+  body { font-family: "Bitstream Vera Serif Bold", serif } */
 *{
     margin: 0px;
     padding: 0px;
@@ -81,6 +81,8 @@ html, body, #index{
     width: 10%;
     max-height: 30%;
     z-index: 1000;
+    background:white;
+    border-radius:50%;
 }
 .btbottom{
     bottom: 2%;
@@ -88,6 +90,8 @@ html, body, #index{
     width: 10%;
     max-height: 30%;
     z-index: 1000;
+    background:white;
+    border-radius:50%;
 }
 .btleft{
     left: 2%;
