@@ -7,7 +7,7 @@ let _x,_y;
 let imgList1 = ["img/game/fruit/strawberry.png", 
 "img/game/fruit/watermelon.png",
 "img/game/fruit/banana.png", 
-"img/game/fruit/graphe.png", 
+"img/game/fruit/graph.png", 
 "img/game/fruit/persimmon.png"];
 let imgList2 = ["img/game/fruit/apple.png", 
 "img/game/fruit/orange.png",
@@ -70,6 +70,7 @@ function handleMove(event){
             this.removeEventListener("touchmove",handleMove,false);
             this.style.left=actionLocation[elemnum][0][0]+"px";
             this.style.top=actionLocation[elemnum][0][1]-parseInt(40)+"px";
+            music(this.children[0].src.slice(0, -4) + ".mp3");
         }
     } 
 }

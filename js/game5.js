@@ -21,31 +21,41 @@ window.addEventListener('load',function(){
 let eventList1 = [
     function () {
         document.getElementById("content").innerHTML = "コーヒー           coffee  ";
+        music("img/game/drink/배우기1_1코히(커피).mp3");
     },function () {
         document.getElementById("content").innerHTML = "ホットチョコレート hot chocolate";
+        music("img/game/drink/.mp3");
     },function () {
         document.getElementById("content").innerHTML = "ぎゅうにゅう       milk";
+        music("img/game/drink/.mp3");
     },function () {
         document.getElementById("content").innerHTML = "とうにゅう         soybean milk";
+        music("img/game/drink/.mp3");
     },function () {
         document.getElementById("content").innerHTML = "";
     },function () {
         document.getElementById("content").innerHTML = "おちゃ             tea";
+        music("img/game/drink/.mp3");
     }
 ];
 let eventList2 = [
     function () {
         document.getElementById("content").innerHTML = "りんごジュス       apple juice";
+        music("img/game/drink/.mp3");
     },function () {
         document.getElementById("content").innerHTML = "レモネード         lemonade";
+        music("img/game/drink/.mp3");
     },function () {
         document.getElementById("content").innerHTML = "アイスティー       icetea";
+        music("img/game/drink/.mp3");
     },function () {
         document.getElementById("content").innerHTML = "みず               water";
+        music("img/game/drink/.mp3");
     },function () {
         document.getElementById("content").innerHTML = "";
     },function () {
         document.getElementById("content").innerHTML = "オレンジジュース   orangejuice";
+        music("img/game/drink/.mp3");
     },
 ];
 

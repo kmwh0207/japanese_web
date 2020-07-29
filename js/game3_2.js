@@ -53,9 +53,10 @@ function handleMove(event){
     if(setLocation[elemnum][0]-sensivility<=_x100 && setLocation[elemnum][0]+sensivility>=_x100){
         if(setLocation[elemnum][1]-sensivility<=_y100 && setLocation[elemnum][1]+sensivility>=_y100){
             this.classList.add("rotateBoth");
-            this.removeEventListener("touchmove",handleMove,false);
             this.style.left=setLocation[elemnum][0]/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
             this.style.top=setLocation[elemnum][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
+            music("img/game/correct.mp3");
+            this.removeEventListener("touchmove",arguments.callee);
         }
     } 
 }

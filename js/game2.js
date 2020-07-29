@@ -5,27 +5,32 @@ let imgList1 = ["img/game/fruit/strawberry.png", "img/game/fruit/watermelon.png"
 
 let eventList1 = [
     function () {
+        music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
         document.getElementById("content").innerHTML = "イチゴ";
     },
     function () {
+        music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
         document.getElementById("content").innerHTML = "すいか";
     }
 ];
 
-let imgList2 = ["img/game/fruit/banana.png", "img/game/fruit/graphe.png", "img/game/fruit/persimmon.png"];
+let imgList2 = ["img/game/fruit/banana.png", "img/game/fruit/graph.png", "img/game/fruit/persimmon.png"];
 
 let eventList2 = [
     function () {
+        music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
         document.getElementById("content").innerHTML = "バナナ";
     },
     function () {
+        music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
         document.getElementById("content").innerHTML = "ぶどう";
     },
     function () {
+        music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
         document.getElementById("content").innerHTML = "かぎ";
     }
@@ -36,10 +41,12 @@ let imgList1_ = ["img/game/fruit/apple.png", "img/game/fruit/orange.png"];
 
 let eventList1_ = [
     function () {
+        music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
         document.getElementById("content").innerHTML = "りんご";
     },
     function () {
+        music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
         document.getElementById("content").innerHTML = "オリンジ";
     }
@@ -49,14 +56,17 @@ let imgList2_ = ["img/game/fruit/peach.png", "img/game/fruit/pear.png", "img/gam
 
 let eventList2_ = [
     function () {
+        music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
         document.getElementById("content").innerHTML = "もも";
     },
     function () {
+        music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
         document.getElementById("content").innerHTML = "なし";
     },
     function () {
+        music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
         document.getElementById("content").innerHTML = "パイナップル";
     }

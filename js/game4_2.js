@@ -19,7 +19,7 @@ let names=[['coat','shirt','pants','skirt'],['hat','socks','shoes','gloves']]
 
 let eventList = [function(){},function(){},function(){},function(){},function(){}];
 let textOrder=[[2,1,0,3],[3,1,2,0]];
-let setLocation=[[[24,45],[36,44],[50,40],[62,43]],[[30,30],[44,30],[57,30],[68,30]]];
+let setLocation=[[[28,39],[42,39],[56,36.5],[71,37]],[[30,30],[44,30],[58,30],[70,30]]];
 
 window.addEventListener('load',function(){
     nextpage(0);
@@ -56,12 +56,14 @@ function handleMove(event){
     if(setLocation[mode][elemnum][0]-sensivility<=_x100 && setLocation[mode][elemnum][0]+sensivility>=_x100){
         if(setLocation[mode][elemnum][1]-sensivility<=_y100 && setLocation[mode][elemnum][1]+sensivility>=_y100){
             this.classList.add("rotateBoth");
-            this.removeEventListener("touchmove",handleMove,false);
+            //this.removeEventListener("touchmove",handleMove,false);
             this.style.left=setLocation[mode][elemnum][0]/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
             console.log('setLocation[mode][elemnum][0]: ', setLocation[mode][elemnum][0]);
             this.style.top=setLocation[mode][elemnum][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
             console.log('setLocation[mode][elemnum][1]: ', setLocation[mode][elemnum][1]);
             eventFunctions.addExp(mode,selected_id);
+            music("img/game/correct.mp3");
+            this.removeEventListener("touchmove",arguments.callee);
         }
     } 
 }

@@ -60,15 +60,15 @@ let colorlist2 = ["yellow", "purple", "black"];
 let colorlist2_ = ["white", "brown"];
 
 let soundList = [
-    "img/game/color/red.mp3",
-    "img/game/color/green.mp3",
-    "img/game/color/blue.mp3",
     "img/game/color/orange.mp3",
-    "img/game/color/purple.mp3",
-    "img/game/color/yellow.mp3",
+    "img/game/color/green.mp3",
+    "img/game/color/red.mp3",
+    "img/game/color/blue.mp3",
     "img/game/color/pink.mp3",
-    "img/game/color/white.mp3",
+    "img/game/color/yellow.mp3",
+    "img/game/color/purple.mp3",
     "img/game/color/black.mp3",
+    "img/game/color/white.mp3",
     "img/game/color/brown.mp3"
 ];
 
