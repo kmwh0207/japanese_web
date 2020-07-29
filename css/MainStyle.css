@@ -81,8 +81,6 @@ html, body, #index{
     width: 10%;
     max-height: 30%;
     z-index: 1000;
-    background:white;
-    border-radius:50%;
 }
 .btbottom{
     bottom: 2%;
@@ -90,8 +88,6 @@ html, body, #index{
     width: 10%;
     max-height: 30%;
     z-index: 1000;
-    background:white;
-    border-radius:50%;
 }
 .btleft{
     left: 2%;

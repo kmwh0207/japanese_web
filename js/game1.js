@@ -76,12 +76,14 @@ function nextpage(){
         i.innerHTML="";
     }
     if(mode == 0){
+        document.getElementById("background").setAttribute("src","img/game/color/color_learn1_backgrond.png");
         let img_run = new Add_img("container5",imgList,"fadeIn",eventList);
         img_run.apply();
         img_run = new Add_img("balloon",imgList_balloon,"",eventList_balloon);
         img_run.apply();
         mode=1;
     }else{
+        document.getElementById("background").setAttribute("src","img/game/color/color_learn2_backgrond.png");
         let img_run = new Add_img("container5",imgList2,"fadeIn",eventList2);
         img_run.apply();
         img_run = new Add_img("balloon",imgList_balloon2,"",eventList_balloon2);

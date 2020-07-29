@@ -4,21 +4,23 @@ window.addEventListener('load',function(){
     for(let element of elements){
         element.addEventListener("animationend",function(){
             element.classList.add("none");
-            element.classList.remove("opacityAlternate");
+            element.classList.remove("opacityAlternate_custom");
         },false);
     }
+    elements[count].classList.remove("none");
+    elements[count].classList.add("opacityAlternate_custom");
+    count = (count+1)%elements.length;
     setInterval(function(){
         elements[count].classList.remove("none");
-        elements[count].classList.add("opacityAlternate");
+        elements[count].classList.add("opacityAlternate_custom");
         count = (count+1)%elements.length;
-        
-    },1000);
+    },7000);
     var img = document.getElementById("background");
     document.body.style.width = img.width.toString() + "px"
     document.body.style.height = img.height.toString() + "px"
-    setTimeout(() => {
+    document.body.addEventListener("touchend",()=>{
         document.getElementById('audio_play').play();
-    }, 2000);
+    })
 });
 function stop(){
     document.getElementById('audio_play').pause();

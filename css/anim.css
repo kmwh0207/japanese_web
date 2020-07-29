@@ -86,7 +86,7 @@
       /* Choose the animation */
       animation-name: rotate_Right;
       /* The animation’s duration */
-      animation-duration: 1000ms;
+      animation-duration: 1500ms;
       /* The number of times we want
           the animation to run */
       animation-iteration-count: infinite;
@@ -95,20 +95,22 @@
       animation-direction: alternate;
       animation-timing-function: ease-out;
       animation-fill-mode: none;
+      animation-delay: 1s;
 }
 .rotateLeft{
   /* Choose the animation */
-  animation-name: rotate_Right;
+  animation-name: rotate_Left;
   /* The animation’s duration */
-  animation-duration: 1000ms;
+  animation-duration: 1500ms;
   /* The number of times we want
       the animation to run */
   animation-iteration-count: infinite;
   /* Causes the animation to reverse
       on every odd iteration */
-  animation-direction: alternate-reverse;
+  animation-direction: alternate;
   animation-timing-function: ease-out;
   animation-fill-mode: none;
+  animation-delay: 1s;
 }
 .moveUp{
   /* Choose the animation */
@@ -259,7 +261,10 @@
     }
   }
   @keyframes rotate_Right {
-    0% {
+    0%{
+      transform: rotate(0deg);
+    }
+    50% {
       transform: rotate(0deg);
     }
     100% {
@@ -268,7 +273,10 @@
   }
   /* rotate_Right 에 reverse 적용한거랑 같음*/
   @keyframes rotate_Left {
-    0% {
+    0%{
+      transform: rotate(0deg);
+    }
+    50% {
       transform: rotate(0deg);
     }
     100% {

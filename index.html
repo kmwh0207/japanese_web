@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>일본어 교육 앱</title>
     <link rel="stylesheet" type="text/css" href="css/MainStyle.css">
     <link rel="stylesheet" type="text/css" href="css/anim.css">
+    <link rel="stylesheet" type="text/css" href="css/cuma.css">
     <link rel="stylesheet" href="css/main1.css">
     <script src="js/type_check.js"></script>
     <script src="js/default.js"></script>
@@ -15,7 +15,9 @@
 </head>
 
 <body>
-    <audio id='audio_play' src='img/game/봄소풍(편집).wav'></audio> 
+    <audio autoplay loop id="audio_play">
+        <source src='img/game/봄소풍(편집).wav' type="audio/wav">
+    </audio> 
     <div id="index" class="field">
         <img id="background" class="background " src="img/index/main_background.png" alt="">
             <div class="btleft btbottom" style="bottom:20%;"><img src="img/index/music_button.png" alt="" onclick="stop()"></div>
@@ -24,7 +26,7 @@
     </div>
 
     </div>
-    <img class="none cuma" src="img/index/cuma1.png" alt="">
+    <img class="cuma" src="img/index/cuma1.png" alt="">
     <img class="none cuma" src="img/index/cuma2.png" alt="">
     <img class="none cuma" src="img/index/cuma3.png" alt="">
     <img class="none cuma" src="img/index/cuma2.png" alt="">

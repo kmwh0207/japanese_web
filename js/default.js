@@ -18,6 +18,12 @@ window.onload = function () {
         console.log(e);
         e.addEventListener('touchend',function(){console.log("효과음"); music(defaultSound[0]);});
     })/*기본 사운드*/
+    try{
+        /*텍스트 출력 삭제*/
+        document.getElementById("content_box").classList.add("none");
+    }catch(e){
+        
+    }
 }
 /*document.body.style.width=window.innerWidth.toString()+"px"
 document.body.style.height=window.innerHeight.toString()+"px"*/

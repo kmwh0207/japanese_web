@@ -1,0 +1,25 @@
+.opacityAlternate_custom {
+    /* Choose the animation */
+    animation-name: OpacityCuma;
+    /* The animation’s duration */
+    animation-duration: 7000ms;
+    /* The number of times we want
+        the animation to run */
+    animation-iteration-count: 2;
+    /* Causes the animation to reverse
+        on every odd iteration */
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }  
+  @keyframes OpacityCuma {
+	0% {
+        opacity: 0%;
+	}
+	50% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
