@@ -355,6 +355,6 @@
 }
 .ball{
 border-radius:50%;
-backgroun:white;
+background:white;
 animation:ball 0.8s ease-in Infinite Alternate;
 }
