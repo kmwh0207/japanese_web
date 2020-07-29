@@ -117,7 +117,7 @@
   animation-name: moveUp;
   animation-direction: normal;
   /* The animation’s duration */
-  animation-duration: 2000ms;
+  animation-duration: 5000ms;
   /* The number of times we want
       the animation to run */
   animation-iteration-count: 1;
