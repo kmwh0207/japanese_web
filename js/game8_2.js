@@ -57,6 +57,7 @@ function handleMove(event){
             this.style.left=setLocation[mode][elemnum][0]/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
             this.style.top=setLocation[mode][elemnum][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
             eventFunction.addExp(mode,selected_id);
+            music("img/game/correct.mp3");
         }
     } 
 }
@@ -99,17 +100,17 @@ function nextpage(change){
 
 window.addEventListener('load',function(){
     let elements = document.getElementsByClassName("man_img");
-    let count=0;
-    for(let element of elements){
+    let count=1;
+    /* for(let element of elements){
         element.addEventListener("animationend",function(){
             element.classList.add("none");
             element.classList.remove("opacityAlternate");
         },false);
-    }
+    } */
     setInterval(function(){
         elements[count].classList.remove("none");
-        elements[count].classList.add("opacityAlternate");
         count = (count+1)%elements.length;
+        elements[count].classList.add("none");
         console.log(count);
-    },1200);
+    },3200);
 });

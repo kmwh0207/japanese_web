@@ -21,7 +21,7 @@ let imgList_ = ["img/game/fruit/play_1_basket.png",
 "img/game/fruit/play_1_basket.png", 
 "img/game/fruit/play_1_basket.png"];
 let eventList_ = [function(){},function(){},function(){},function(){},function(){}];
-let textList=[["かぎ","すいか","バナナ","イチゴ","ぶどう"],["りんご","オリンジ","なし","パイナップル","もも"]];
+let textList=[["かぎ<br/>persimmon","すいか<br/>watermelon","バナナ<br/>banana","イチゴ<br/>strawberry","ぶどう<br/>grape"],["りんご<br/>apple","オリンジ<br/>orange","なし<br/>apple","パイナップル<br/>pineapple","もも<br/>peach"]];
 let textOrder=[[3,1,2,0,4],[0,1,3,4,2]];
 let actionLocation = [[[23,11],[31,23]],[[49,11],[58,23]],[[70,11],[82,23]],[[36,33],[44,46]],[[61,33],[71,46]],];
 
@@ -48,8 +48,8 @@ function handleStart(event){
     console.log('selected_id: ', selected_id);
     let elements = document.getElementById("container5_").children;
     for(let i=0; i<elements.length; i++){
-        actionLocation[i][0][0]=elements[i].getBoundingClientRect().left;
-        actionLocation[i][0][1]=elements[i].getBoundingClientRect().top;
+        actionLocation[i][0][0]=elements[i].getBoundingClientRect().left+20;
+        actionLocation[i][0][1]=elements[i].getBoundingClientRect().top+20;
         actionLocation[i][1][0]=elements[i].getBoundingClientRect().right;
         actionLocation[i][1][1]=elements[i].getBoundingClientRect().bottom;
         console.log(actionLocation)

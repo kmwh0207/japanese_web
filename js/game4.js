@@ -1,6 +1,6 @@
 var mode=0;
 let selected_id = 0;
-
+window.showtext=1;
 let textList=[[['','',''],['ズボン pants','うわぎ coat','ツャツ shirt'],['ズボン pants','うわぎ coat','スカート skirt'],['','','']],[['','','ぼうし hat'],['ズボン pants','うわぎ coat','ツャツ shirt'],['ズボン pants','うわぎ coat','スカート skirt'],['てぶくろ gloves','くつした socks','くつ shoes']]];
 let soundList=[[['','',''],['img/game/clothing/즈봉(바지).mp3','img/game/clothing/우와기(외투).mp3','img/game/clothing/샤츠(셔츠).mp3'],['img/game/clothing/즈봉(바지).mp3','img/game/clothing/우와기(외투).mp3','img/game/clothing/스카토(스커트).mp3'],['','','']],[['','','img/game/clothing/보시(모자).mp3'],['img/game/clothing/즈봉(바지).mp3','img/game/clothing/우와기(외투).mp3','img/game/clothing/스카토(스커트).mp3'],['img/game/clothing/즈봉(바지).mp3','img/game/clothing/우와기(외투).mp3','img/game/clothing/스카토(스커트).mp3'],['img/game/clothing/테부크로(장갑).mp3','img/game/clothing/구츠시타(양말).mp3','img/game/clothing/구츠(신발).mp3']]];
 

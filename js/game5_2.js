@@ -93,6 +93,7 @@ function handleMove(event){
             this.style.left=setLocation[mode][elemnum][0]/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
             this.style.top=setLocation[mode][elemnum][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
             eventList[mode][selected_id]();
+            music("img/game/correct.mp3");
         }
     } 
 }

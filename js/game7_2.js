@@ -17,7 +17,7 @@ let eventList = [
 
 
 let textOrder=[[2,0,1,4,3],[4,3,1,2,0]];
-let setLocation=[[[19,22],[49,22],[81,22],[34,56],[66,56]],[[18,24],[50,23],[82,23],[34,57],[67,57]]];
+let setLocation=[[[17,25],[50,24],[84,24],[33,58],[68,58]],[[18,24],[50,23],[83,23],[34,57],[67,57]]];
 
 window.addEventListener('load',function(){
     nextpage(0);
@@ -57,6 +57,7 @@ function handleMove(event){
             this.style.left=setLocation[mode][elemnum][0]/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
             this.style.top=setLocation[mode][elemnum][1]/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
             eventFunction.addExp(mode,selected_id);
+            music("img/game/correct.mp3");
         }
     }
 }

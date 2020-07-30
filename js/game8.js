@@ -5,6 +5,10 @@ let eventList = [
     ['','','','','','','','','',''],
     ['','','','','','','','','','']
 ];
+let soundList = [
+    ['눈(메)','머리(아타마)','코(하나)','귀(미미)','입(구찌)','','','','',''],
+    ['눈(메)','머리(아타마)','코(하나)','귀(미미)','입(구찌)','어깨(카타)','배(오나카)','손(테)','무릎(히자)','발가락(즈마사키)']
+];
 let textList=[];
 
 window.addEventListener('load',function(){
@@ -17,6 +21,7 @@ function addTouchEvent(id){
     for(let i=0; i<elements.length; i++){
         elements[i].addEventListener("touchend",()=>{
             eventFunction.addExp(mode,i);
+            music("img/game/body/"+soundList[mode][i]+".mp3");
         },false);
     }
 }
@@ -42,17 +47,17 @@ function nextpage(change){
 
 window.addEventListener('load',function(){
     let elements = document.getElementsByClassName("man_img");
-    let count=0;
-    for(let element of elements){
+    let count=1;
+    /* for(let element of elements){
         element.addEventListener("animationend",function(){
             element.classList.add("none");
             element.classList.remove("opacityAlternate");
         },false);
-    }
+    } */
     setInterval(function(){
         elements[count].classList.remove("none");
-        elements[count].classList.add("opacityAlternate");
         count = (count+1)%elements.length;
+        elements[count].classList.add("none");
         console.log(count);
-    },1200);
+    },3200);
 });

@@ -11,16 +11,16 @@
 }
 #container10_{
     position: absolute;
-    left: 31%;
-    top: 9%;
+    left: 34%;
+    top: 15%;
     display: grid;
-    width: 21%;
-    height: 79%;
+    width: 17%;
+    height: 69%;
     margin: 0%;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(auto-fit,minmax(10%,auto));
     padding: 0% 0% 0% 0%;
-    z-index:2;
+    z-index: 2;
 }
 .item{
     position: fixed;

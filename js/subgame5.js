@@ -150,7 +150,6 @@ function nextpage(num){
     addTouchEvent("container4");
     document.getElementById("background").classList.remove('opacity');
     if(num == 0){
-        mode = 0;
     }else{
         event.preventDefault();
         let elem = document.getElementsByClassName("item");

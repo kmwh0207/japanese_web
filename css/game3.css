@@ -1,13 +1,20 @@
 .object {
     position: relative;
     display: grid;
-    top: 5%;
+    top: 25%;
     left: 20%;
     width: 62%;
     height: 80%;
     margin: 0%;
-    grid-template-columns: 15% 26% 10% 13% 15% 20%;
+    grid-template-columns: 14% 24% 14% 14% 15% 20%;
     grid-template-rows: repeat(auto-fit,minmax(30%,auto));
     grid-column-gap: 0%;
     grid-row-gap: 0%;
+    text-align: center;
 }
+.item>p{
+    position: absolute;
+    bottom:10%;
+    width:150%;
+}
+.item>img{}

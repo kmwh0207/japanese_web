@@ -24,38 +24,38 @@ let eventList1 = [
         music("img/game/drink/배우기1_1코히(커피).mp3");
     },function () {
         document.getElementById("content").innerHTML = "ホットチョコレート hot chocolate";
-        music("img/game/drink/.mp3");
+        music("img/game/drink/배우기1_2홋토초코레토(핫초코).mp3");
     },function () {
         document.getElementById("content").innerHTML = "ぎゅうにゅう       milk";
-        music("img/game/drink/.mp3");
+        music("img/game/drink/배우기1_3규뉴(우유).mp3");
     },function () {
         document.getElementById("content").innerHTML = "とうにゅう         soybean milk";
-        music("img/game/drink/.mp3");
+        music("img/game/drink/배우기1_4토뉴(베지밀).mp3");
     },function () {
         document.getElementById("content").innerHTML = "";
     },function () {
         document.getElementById("content").innerHTML = "おちゃ             tea";
-        music("img/game/drink/.mp3");
+        music("img/game/drink/배우기1_5오챠(녹차).mp3");
     }
 ];
 let eventList2 = [
     function () {
         document.getElementById("content").innerHTML = "りんごジュス       apple juice";
-        music("img/game/drink/.mp3");
+        music("img/game/drink/배우기2_1링고쥬스(사과주스).mp3");
     },function () {
         document.getElementById("content").innerHTML = "レモネード         lemonade";
-        music("img/game/drink/.mp3");
+        music("img/game/drink/배우기2_2레모네도(레모네이드).mp3");
     },function () {
         document.getElementById("content").innerHTML = "アイスティー       icetea";
-        music("img/game/drink/.mp3");
+        music("img/game/drink/배우기2_3아이스티.mp3");
     },function () {
         document.getElementById("content").innerHTML = "みず               water";
-        music("img/game/drink/.mp3");
+        music("img/game/drink/배우기2_4미즈(물).mp3");
     },function () {
         document.getElementById("content").innerHTML = "";
     },function () {
         document.getElementById("content").innerHTML = "オレンジジュース   orangejuice";
-        music("img/game/drink/.mp3");
+        music("img/game/drink/배우기2_5오렌지쥬스.mp3");
     },
 ];
 

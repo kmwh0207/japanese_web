@@ -20,7 +20,9 @@ window.onload = function () {
     })/*기본 사운드*/
     try{
         /*텍스트 출력 삭제*/
-        document.getElementById("content_box").classList.add("none");
+        if(window.showtext==undefined){
+            document.getElementById("content_box").classList.add("none");
+        }
     }catch(e){
         
     }
@@ -138,10 +140,11 @@ class Add_exp {
     }
 }
 
-function music(src){
+function music(src,volume){
     console.log(src);
     var audio = new Audio();
     audio.src = src;
+    if(isNumber(volume)) audio.volume=volume;
     audio.play();
 }
 

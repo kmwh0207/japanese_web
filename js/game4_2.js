@@ -5,6 +5,7 @@ let _y100;
 let _x,_y;
 let sensivility=10;
 let eventFunctions;
+window.showtext=1;
 
 let imgList1 = ["img/game/clothing/clothing_play_1(옷1).png",
 "img/game/clothing/clothing_play_1(옷2).png",
@@ -18,8 +19,8 @@ let imgList2 = ["img/game/clothing/clothing_play2(모자).png",
 let names=[['coat','shirt','pants','skirt'],['hat','socks','shoes','gloves']]
 
 let eventList = [function(){},function(){},function(){},function(){},function(){}];
-let textOrder=[[2,1,0,3],[3,1,2,0]];
-let setLocation=[[[28,39],[42,39],[56,36.5],[71,37]],[[30,30],[44,30],[58,30],[70,30]]];
+let textOrder=[[1,2,0,3],[3,1,2,0]];
+let setLocation=[[[28,39],[42,37],[56,36.5],[71,37]],[[30,30],[44,30],[58,30],[70,30]]];
 
 window.addEventListener('load',function(){
     nextpage(0);

@@ -3,15 +3,17 @@ var mode = 0;
 let selected_id = 0;
 let imgList=["img/game/number/1.png","img/game/number/2.png","img/game/number/3.png","img/game/number/4.png","img/game/number/5.png","img/game/number/6.png","img/game/number/7.png","img/game/number/8.png","img/game/number/9.png","img/game/number/10.png"]
 let imgList1 = ["img/game/number/1.png", "img/game/number/2.png"];
-
+let soundList=['1.mp3','2.mp3','3.mp3','4.mp3','5.mp3','6.mp3','7.mp3','8.mp3','9.mp3','10.mp3'];
 let eventList1 = [
     function () {
         this.src = this.src.slice(0, -4) + "_.png";
         document.getElementById("content").innerHTML = "1";
+        music("img/game/number/"+soundList[0]);
     },
     function () {
         this.src = this.src.slice(0, -4) + "_.png";
         document.getElementById("content").innerHTML = "2";
+        music("img/game/number/"+soundList[1]);
     }
 ];
 
@@ -21,14 +23,17 @@ let eventList2 = [
     function () {
         this.src = this.src.slice(0, -4) + "_.png";
         document.getElementById("content").innerHTML = "3";
+        music("img/game/number/"+soundList[2]);
     },
     function () {
         this.src = this.src.slice(0, -4) + "_.png";
         document.getElementById("content").innerHTML = "4";
+        music("img/game/number/"+soundList[3]);
     },
     function () {
         this.src = this.src.slice(0, -4) + "_.png";
         document.getElementById("content").innerHTML = "5";
+        music("img/game/number/"+soundList[4]);
     }
 ];
 
@@ -39,10 +44,12 @@ let eventList1_ = [
     function () {
         this.src = this.src.slice(0, -4) + "_.png";
         document.getElementById("content").innerHTML = "6";
+        music("img/game/number/"+soundList[5]);
     },
     function () {
         this.src = this.src.slice(0, -4) + "_.png";
         document.getElementById("content").innerHTML = "7";
+        music("img/game/number/"+soundList[6]);
     }
 ];
 
@@ -52,14 +59,17 @@ let eventList2_ = [
     function () {
         this.src = this.src.slice(0, -4) + "_.png";
         document.getElementById("content").innerHTML = "8";
+        music("img/game/number/"+soundList[7]);
     },
     function () {
         this.src = this.src.slice(0, -4) + "_.png";
         document.getElementById("content").innerHTML = "9";
+        music("img/game/number/"+soundList[8]);
     },
     function () {
         this.src = this.src.slice(0, -4) + "_.png";
         document.getElementById("content").innerHTML = "10";
+        music("img/game/number/"+soundList[9]);
     }
 ];
 

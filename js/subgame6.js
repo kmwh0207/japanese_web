@@ -8,6 +8,7 @@ let timer;
 let sensivility=10;
 let total_page=10;
 let eventFunctions;
+window.showtext=1;
 let imgList = [
     [
         '',"img/game/draw/1/1.png",'',
@@ -195,7 +196,7 @@ function handleEnd(event){
     document.querySelector('#tongs').classList.add('movetongs');
     this.children[0].classList.add('moveball');
     /* 이벤트 종료 후 */
-    eventFunctions.addExp(mode,selected_id); 
+    setTimeout(function(){eventFunctions.addExp(mode,selected_id);},2000);
 }
 
 function nextpage(num){

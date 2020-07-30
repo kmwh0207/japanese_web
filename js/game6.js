@@ -16,12 +16,16 @@ let eventList = [
     },
     function () {
         document.getElementById("content").innerHTML = "ひこうき   airplane";
+        music("img/game/transport/비행기.wav",0.2);
+        music("img/game/transport/sound/히코키(비행기).mp3");
     },
     function () {
         document.getElementById("content").innerHTML = "";
     },
     function () {
         document.getElementById("content").innerHTML = "トラック   truck";
+        music("img/game/transport/트럭.wav",0.2);
+        music("img/game/transport/sound/토락쿠(트럭).mp3");
     },
     function () {
         document.getElementById("content").innerHTML = "";
@@ -31,6 +35,8 @@ let eventList = [
     },
     function () {
         document.getElementById("content").innerHTML = "ちかてつ 　subway ";
+        music("img/game/transport/지하철.wav",0.2);
+        music("img/game/transport/sound/치카테츠(지하철).mp3");
     },
     function () {
         document.getElementById("content").innerHTML = "";
@@ -40,9 +46,13 @@ let eventList = [
     },
     function () {
         document.getElementById("content").innerHTML = "オートバイ motocycle";
+        music("img/game/transport/오토바이.wav",0.2);
+        music("img/game/transport/sound/오토바이.mp3");
     },
     function () {
         document.getElementById("content").innerHTML = "タクシー   taxi";
+        music("img/game/transport/택시.wav",0.2);
+        music("img/game/transport/sound/타쿠시(택시).mp3");
     },
     function () {
         document.getElementById("content").innerHTML = "";
@@ -63,27 +73,37 @@ let eventList_ = [
     },
     function () {
         document.getElementById("content").innerHTML = "ヘリコプター     helicopter";
+        music("img/game/transport/헬리콥터.wav",0.2);
+        music("img/game/transport/sound/헤리콥타(헬리콥터).mp3");
     },
     function () {
         document.getElementById("content").innerHTML = "";
     },
     function () {
         document.getElementById("content").innerHTML = "じてんしゃ       bicycle  ";
+        music("img/game/transport/자전거.mp3",0.2);
+        music("img/game/transport/sound/지텐샤(자전거).mp3");
     },
     function () {
         document.getElementById("content").innerHTML = "";
     },
     function () {
         document.getElementById("content").innerHTML = "きゅうきゅうしゃ ambulance";
+        music("img/game/transport/엠뷸런스.mp3",0.2);
+        music("img/game/transport/큐큐샤(구급차).mp3");
     },
     function () {
         document.getElementById("content").innerHTML = "";
     },
     function () {
         document.getElementById("content").innerHTML = "しょうぼうしゃ   fire truck  ";
+        music("img/game/transport/소방차.mp3",0.2);
+        music("img/game/transport/sound/쇼보샤(소방차).mp3");
     },
     function () {
         document.getElementById("content").innerHTML = "ふね             ship";
+        music("img/game/transport/배.wav",0.2);
+        music("img/game/transport/sound/후네(배).mp3");
     },
     function () {
         document.getElementById("content").innerHTML = "";

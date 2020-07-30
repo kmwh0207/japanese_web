@@ -18,6 +18,7 @@ window.addEventListener('load', function () {
         document.getElementById("anim").classList.remove("opacityAlternate2");
     })
 });
+let soundList=['1.mp3','2.mp3','3.mp3','4.mp3','5.mp3','6.mp3','7.mp3','8.mp3','9.mp3','10.mp3'];
 
 function nextpage(change) {
     addTouchEvent('container10');
@@ -133,5 +134,9 @@ function playgame(){
             document.getElementsByClassName('item2')[i].style.backgroundImage="url("+imgList[fruit_num]+")";
         }
         document.getElementsByClassName('item2')[10].style.backgroundImage="url("+numList[correct]+")";
+        music("img/game/number/"+soundList[total-1]);
+        setTimeout(() => {
+            location.reload(true);
+        }, 2000);
     });
 }

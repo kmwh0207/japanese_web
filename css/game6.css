@@ -3,18 +3,18 @@
     top:10%;
     left:0px;
     display: grid;
-    max-width:100%;
+    width:100%;
     height:75%;
     margin: 0%;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(auto-fit,minmax(30%,auto));
-    padding: 0% 10% 0% 10%;
+    padding: 0% 0% 0% 0%;
 }
 .rightmove:hover{
     /* Choose the animation */
     animation-name: right_move;
     /* The animation’s duration */
-    animation-duration: 3000ms;
+    animation-duration: 4000ms;
     /* The number of times we want
         the animation to run */
     animation-iteration-count: 1;
@@ -29,7 +29,7 @@
     /* Choose the animation */
     animation-name: left_move;
     /* The animation’s duration */
-    animation-duration: 3000ms;
+    animation-duration: 4000ms;
     /* The number of times we want
         the animation to run */
     animation-iteration-count: 1;
@@ -46,7 +46,7 @@
         left:0%;
 	}
 	100% {
-        left:400px;
+        left:1200px;
 	}
 }
 @keyframes left_move {
@@ -54,6 +54,6 @@
         left:0%;
 	}
 	100% {
-        left:-400px;
+        left:-1200px;
 	}
 }
