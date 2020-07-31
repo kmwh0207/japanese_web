@@ -16,5 +16,6 @@
     position: absolute;
     bottom:10%;
     width:150%;
+    display: none;
 }
 .item>img{}

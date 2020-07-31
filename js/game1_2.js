@@ -4,6 +4,7 @@ let _x100;
 let _y100;
 let _x,
     _y;
+var is_correct=0;
 
 let colorname = [
     [
@@ -150,13 +151,19 @@ function handleMove(event) {
             document.getElementById("content").innerHTML = colorname[mode][selected_id];
             document.getElementsByClassName("item")[selected_id].classList.remove("hidden");
             let selected_id2 = mode == 1 ? parseInt(selected_id) + 5 : parseInt(selected_id);
+            this.style.left=(actionLocation[selected_id][0][0]+9)/100*document.body.offsetWidth- parseInt(this.offsetWidth/2)+"px";
+            this.style.top=(actionLocation[selected_id][0][1]+9)/100*document.body.offsetHeight-parseInt(this.offsetHeight/2)+"px";
             console.log('selected_id2: ', selected_id2);
             music(soundList[selected_id2]);
             this.removeEventListener("touchmove",arguments.callee);
+            is_correct=1;
+            //music("img/game/correct.mp3",0.2);
         }
     }
 }
 function handleEnd(event) {
+    /* is_correct==0? music("img/game/wrong.wav"):null;
+    is_correct=0; */
     this.classList.remove("rotateRight");
     this.style = "";
     nextpage(0);

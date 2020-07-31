@@ -196,7 +196,10 @@ function handleEnd(event){
     document.querySelector('#tongs').classList.add('movetongs');
     this.children[0].classList.add('moveball');
     /* 이벤트 종료 후 */
-    setTimeout(function(){eventFunctions.addExp(mode,selected_id);},2000);
+    setTimeout(function(){
+        eventFunctions.addExp(mode,selected_id);
+        music("img/game/draw/"+(mode+1)+"/"+(Math.floor(selected_id/2)+1)+".m4a");
+    },2500);
 }
 
 function nextpage(num){

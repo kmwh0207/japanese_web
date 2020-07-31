@@ -13,6 +13,7 @@ function addTouchEvent(id){
     for(let i=0; i<elements.length; i++){
         console.log("dataset",elements[i].dataset.num);
         elements[i].addEventListener("touchstart",function(){
+            music("img/game/등장.mp3",0.5);
             selected_id = this.dataset.num;
             /* document.getElementById("content").innerHTML=textList[mode][i];
             document.getElementsByClassName("item")[selected_id].classList.remove("hidden"); */

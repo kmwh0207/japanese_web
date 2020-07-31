@@ -86,7 +86,7 @@
       /* Choose the animation */
       animation-name: rotate_Right;
       /* The animation’s duration */
-      animation-duration: 1500ms;
+      animation-duration: 1000ms;
       /* The number of times we want
           the animation to run */
       animation-iteration-count: infinite;
@@ -100,6 +100,20 @@
   /* Choose the animation */
   animation-name: rotate_Left;
   /* The animation’s duration */
+  animation-duration: 1000ms;
+  /* The number of times we want
+      the animation to run */
+  animation-iteration-count: infinite;
+  /* Causes the animation to reverse
+      on every odd iteration */
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: none;
+}
+.rotateRight2{
+  /* Choose the animation */
+  animation-name: rotate_Right_delay;
+  /* The animation’s duration */
   animation-duration: 1500ms;
   /* The number of times we want
       the animation to run */
@@ -109,6 +123,20 @@
   animation-direction: alternate;
   animation-timing-function: ease-out;
   animation-fill-mode: none;
+}
+.rotateLeft2{
+/* Choose the animation */
+animation-name: rotate_Left_delay;
+/* The animation’s duration */
+animation-duration: 1500ms;
+/* The number of times we want
+  the animation to run */
+animation-iteration-count: infinite;
+/* Causes the animation to reverse
+  on every odd iteration */
+animation-direction: alternate;
+animation-timing-function: ease-out;
+animation-fill-mode: none;
 }
 .moveUp{
   /* Choose the animation */
@@ -204,7 +232,7 @@
   /* Choose the animation */
   animation-name: moveLR;
   /* The animation’s duration */
-  animation-duration: 4000ms;
+  animation-duration: 8000ms;
   /* The number of times we want
       the animation to run */
   animation-iteration-count: infinite;
@@ -213,7 +241,7 @@
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
   animation-fill-mode: none;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
 }
 .arrow_anim{
     /* Choose the animation */
@@ -262,6 +290,23 @@
     0%{
       transform: rotate(0deg);
     }
+    100% {
+      transform: rotate(30deg);
+    }
+  }
+  /* rotate_Right 에 reverse 적용한거랑 같음*/
+  @keyframes rotate_Left {
+    0%{
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-30deg);
+    }
+  }
+  @keyframes rotate_Right_delay {
+    0%{
+      transform: rotate(0deg);
+    }
     50% {
       transform: rotate(0deg);
     }
@@ -270,7 +315,7 @@
     }
   }
   /* rotate_Right 에 reverse 적용한거랑 같음*/
-  @keyframes rotate_Left {
+  @keyframes rotate_Left_delay {
     0%{
       transform: rotate(0deg);
     }
@@ -338,10 +383,10 @@
 }
 @Keyframes moveLR{
   0% {
-    transform: translateX(-20vw);
+    transform: translateX(-10vw);
 	}
   100% {
-    transform: translateX(95vw);
+    transform: translateX(85vw);
 	}
 }
 

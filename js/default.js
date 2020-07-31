@@ -144,7 +144,7 @@ function music(src,volume){
     console.log(src);
     var audio = new Audio();
     audio.src = src;
-    if(isNumber(volume)) audio.volume=volume;
+    if(isNumber(volume)) audio.volume=volume; else audio.volume=1;
     audio.play();
 }
 

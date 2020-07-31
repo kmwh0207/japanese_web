@@ -9,8 +9,8 @@ let imgList = ["img/mainmenu/1.color_eicon.png",
 
 var movepage = function(page){
     document.getElementById("choice").style.display="block";
-    document.getElementById("finger1").classList.add("rotateRight");
-    document.getElementById("finger2").classList.add("rotateLeft");
+    document.getElementById("finger1").classList.add("rotateRight2");
+    document.getElementById("finger2").classList.add("rotateLeft2");
     new Promise(function(resolve,reject){
         document.getElementById("choice").classList.add("fadeIn");
         document.getElementById("choice").addEventListener("touchend",function(e){

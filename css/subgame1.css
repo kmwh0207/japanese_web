@@ -1,4 +1,4 @@
-#container2{ 
+/* #container2{ 
     position: absolute;
     top:21%;
     display: grid;
@@ -19,6 +19,27 @@
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(auto-fit,minmax(10%,auto));
     padding: 0% 10% 0% 10%;
+} */
+
+#number{
+    position: absolute;
+    height:100%;
+    width:50%;
+    max-height: 100%;
+    left:0;
+    right:0;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+#numimg{
+    position: absolute;
+    width:100%;
+    height: auto;
+    margin:auto;
+    top:0;
+    bottom:0;
 }
 
 #menu {

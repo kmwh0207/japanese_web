@@ -74,12 +74,12 @@ let background_img = [
     'img/game/treasure/보물찾기_10(뒷배경).png'
 ];
 let mainAnim=["img/game/treasure/인사말손가락애니_1.png","img/game/treasure/인사말손가락애니_2.png","img/game/treasure/인사말손가락애니_3.png"];
-
+let soundList=["4_　おはよう(아침인사)","1_　ただいま(다녀왔어요)","3_　じゃ、また(그럼,또)","10_　いってきます(다녀오겠습니다.)","3_　こんにちは","2_　いただきます","8_　また、あした","10_　おめでとうございます","8_　はじめまして。(처음뵙겠습니다.)","7_　おやすみ(잘 자)"];
 let names=['정답!','훌륭해요!','','','','','','','','']
 
 let eventList = [function(){},function(){},function(){},function(){}];
 let correctNum=[2,0,3,0,1,3,0,1,0,3];
-let setLocation=[[57,41],[42,41],[57,41],[],[12,41],[92,41],[57,41],[30,44],[30,44],[19,41],[57,41]];
+let setLocation=[[57.5,41],[42.5,41],[57.5,41],[60,41],[72,40],[92,41],[57,41],[30,44],[30,44],[19,41],[57,41]];
 
 window.addEventListener('load',function(){
     nextpage(0);
@@ -133,6 +133,8 @@ function handleMove(event){
                 console.log('setLocation[mode][1]: ', setLocation[mode][1]);
                 eventFunctions.addExp_(mode);
                 is_correct=1;
+                music("img/game/correct.mp3",0.2);
+                music("img/game/balloon/sound/"+soundList[mode]+".m4a");
             }
         } 
     }else{
@@ -143,7 +145,11 @@ function handleEnd(event){
     this.classList.remove("rotateBoth");
     selected_id = -1;
     is_correct==0? nextpage(0):null;
+    is_correct==0? music("img/game/wrong.wav"):null;
     is_correct=0;
+}
+function playsound(){
+    music("img/game/balloon/sound/"+soundList[mode]+".m4a");
 }
 
 function nextpage(num){

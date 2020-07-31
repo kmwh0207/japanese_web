@@ -50,23 +50,27 @@
 }
 
 @Keyframes movetongs {
-    10%{
+    0%{
         content:url("../img/game/draw/집게_2.png");
+    }
+    10%{
         transform: translate(0%,50%);
+        content:url("../img/game/draw/집게_3.png");
     }
     30% {
-        content:url("../img/game/draw/집게_3.png");
-        transform: translate(0%,-30%);
+        transform: translate(0%,0%);
+        content:url("../img/game/draw/집게_2.png");
     }
     50% {
-        content:url("../img/game/draw/집게_2.png");
-        transform: translate(-290%,-30%);
+        content:url("../img/game/draw/집게_1.png");
+        transform: translate(-290%,0%);
     }
     70% {
         content:url("../img/game/draw/집게_1.png");
         transform: translate(-290%,0%);
     }
     90%{
+        content:url("../img/game/draw/집게_1.png");
         transform: translate(-290%,0%);
     }
 }
@@ -75,18 +79,18 @@
         transform: translate(0%,0%);
     }
     30% {
-        transform: translate(0%,-360%);
+        transform: translate(0%,-230%);
     }
     50% {
-        transform: translate(-540%,-360%);
+        transform: translate(-546%,-230%);
     }
     70% {
         opacity: 1;
-        transform: translate(-540%,70%);
+        transform: translate(-546%,-20%);
     }
     100%{
         opacity: 0;
-        transform: translate(-540%,70%);
+        transform: translate(-546%,-20%);
     }
 }
 .movetongs{
