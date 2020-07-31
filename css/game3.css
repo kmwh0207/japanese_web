@@ -19,3 +19,28 @@
     display: none;
 }
 .item>img{}
+
+.moveright2{
+    /* Choose the animation */
+    animation-name: moveRight2;
+    animation-direction: normal;
+    /* The animation’s duration */
+    animation-duration: 1000ms;
+    /* The number of times we want
+        the animation to run */
+    animation-iteration-count: 1;
+    /* Causes the animation to reverse
+        on every odd iteration */
+    animation-direction: normal;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+
+@Keyframes moveRight2{
+    0% {
+      transform: translateX(-100vw);
+      }
+    100% {
+      transform: translateX(0vw);
+      }
+  }

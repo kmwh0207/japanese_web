@@ -15,11 +15,11 @@
     top: 5%;
     left: 4%;
     display: grid;
-    width:40%;
+    width:50%;
     padding: 0% 0% 0% 0%;
     margin: 0%;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(auto-fit,minmax(10%,auto));
+    grid-template-rows: repeat(auto-fit,minmax(20%,auto));
     grid-gap: 2%;
 }
 .button {
@@ -51,7 +51,7 @@
 
 @Keyframes movetongs {
     0%{
-        content:url("../img/game/draw/집게_2.png");
+        content:url("../img/game/draw/집게_1.png");
     }
     10%{
         transform: translate(0%,50%);
@@ -59,13 +59,13 @@
     }
     30% {
         transform: translate(0%,0%);
-        content:url("../img/game/draw/집게_2.png");
+        content:url("../img/game/draw/집게_3.png");
     }
-    50% {
-        content:url("../img/game/draw/집게_1.png");
+    40% {
+        content:url("../img/game/draw/집게_2.png");
         transform: translate(-290%,0%);
     }
-    70% {
+    51% {
         content:url("../img/game/draw/집게_1.png");
         transform: translate(-290%,0%);
     }
@@ -80,6 +80,9 @@
     }
     30% {
         transform: translate(0%,-230%);
+    }
+    40% {
+        transform: translate(-546%,-230%);
     }
     50% {
         transform: translate(-546%,-230%);

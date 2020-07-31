@@ -46,4 +46,9 @@ window.addEventListener('load',function(){
     var img = document.getElementById("background");
     document.body.style.width = img.width.toString() + "px"
     document.body.style.height = img.height.toString() + "px"
+    document.getElementById("exit").addEventListener("touchend",function reload(e){
+        e.preventDefault();
+        e.stopPropagation();
+        location.reload();
+    })    
 });

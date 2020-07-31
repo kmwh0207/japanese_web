@@ -26,9 +26,12 @@
     z-index: 300;
 }
 #choice_{
-    max-width: 100%;
+    position: absolute;
+    left:0;
+    right:0;
+    margin: 0 auto;
+    width: 64%;
     max-height: 100%;
-    margin: auto;
 }
 #finger1{
     position: absolute;
@@ -41,4 +44,10 @@
     width: 9%;
     top: 20%;
     right: 32%;
+}
+#exit{
+    position: absolute;
+    width: 9%;
+    top: -6%;
+    left: 76%;
 }

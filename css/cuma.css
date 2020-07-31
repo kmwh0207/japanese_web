@@ -1,18 +1,18 @@
-.opacityAlternate_custom {
+.cuma {
     /* Choose the animation */
-    animation-name: OpacityCuma;
+    animation-name: Cuma;
     /* The animation’s duration */
-    animation-duration: 7000ms;
+    animation-duration: 10000ms;
     /* The number of times we want
         the animation to run */
     animation-iteration-count: 2;
     /* Causes the animation to reverse
         on every odd iteration */
-    animation-direction: alternate;
+    animation-direction: normal;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-  }  
-  @keyframes OpacityCuma {
+}  
+/* @keyframes OpacityCuma {
 	0% {
         opacity: 0%;
 	}
@@ -22,4 +22,33 @@
     100% {
         opacity: 100%;
     }
+} */
+.cuma{
+    position: absolute;
+    top:50%;
+    left:44%;
+    width:15%;
+    max-height:100%;
+}
+@keyframes Cuma {
+	0% {
+        content:url("../img/index/cuma1.png");
+    }
+    20%{
+        content:url("../img/index/cuma1.png");
+        opacity: 100%;
+    }
+    40%{
+        content:url("../img/index/cuma2.png");
+    }
+	60% {
+        content:url("../img/index/cuma3.png");
+    }
+    60.5% {
+        content:url("../img/index/cuma2.png");
+        opacity: 100%;
+    }
+    100% {
+        content:url("../img/index/cuma2.png");
+	}
 }

@@ -44,10 +44,10 @@ window.addEventListener('load',function(){
             elem=document.getElementsByClassName("item")[count];
             elem.style.backgroundImage=`url('${elem.style.backgroundImage.slice(5, -6) + "_.png"}')`;
             elem.classList.add("opacity");
-        }, 2800);
+        }, 2500);
         setTimeout(() => {
             playgame();
-        }, 4000);
+        }, 5000);
     })
 });
 

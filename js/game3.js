@@ -17,6 +17,7 @@ function addTouchEvent(id){
             selected_id = this.dataset.num;
             /* document.getElementById("content").innerHTML=textList[mode][i];
             document.getElementsByClassName("item")[selected_id].classList.remove("hidden"); */
+            this.children[0].classList.add('moveright2');
             this.children[0].classList.remove("hidden");
             music(soundList[this.dataset.num]);
         },false);

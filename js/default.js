@@ -149,3 +149,9 @@ function music(src,volume){
 }
 
 let defaultSound=["img/game/btsound.wav"];
+
+function go_page(link){
+    setTimeout(() => {
+        location.href=link;
+    }, 500);
+}
