@@ -364,10 +364,10 @@ animation-fill-mode: none;
 }
 @keyframes Opacity {
 	0% {
-    opacity: 0%;
+    opacity: 0;
 	}
 	100% {
-    opacity: 100%;
+    opacity: 1;
 	}
 }
 @Keyframes shake{

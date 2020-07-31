@@ -16,21 +16,21 @@ let names=['older brother','elder sister','father','mother','younger brother','y
 
 let eventList = [function(){},function(){},function(){},function(){},function(){},function(){}];
 let textOrder=[4,2,1,0,5,3];
-let setLocation=[[9,30],[25,19],[42,26],[58,18],[74,40],[91,30]];
+let setLocation=[[8,18],[25,31],[41,19],[58,29],[75,40],[91,30]];
 
 window.addEventListener('load',function(){
     nextpage(0);
-    addTouchEvent("container6");
-    eventFunctions.addExp_(selected_id);
+    //eventFunctions.addExp_(selected_id);
 });
 
 function addTouchEvent(id){
     let elements = document.getElementById(id).children;
     console.log(elements[0].offsetWidth);
     for(let element of elements){
-        element.addEventListener("touchstart",handleStart,false);
-        element.addEventListener("touchmove",handleMove,false);
-        element.addEventListener("touchend",handleEnd,false);
+        console.log(element.children[0]);
+        element.children[0].addEventListener("touchstart",handleStart,false);
+        element.children[0].addEventListener("touchmove",handleMove,false);
+        element.children[0].addEventListener("touchend",handleEnd,false);
     }
 }
 
@@ -38,7 +38,7 @@ function handleStart(event){
     this.style.width=this.offsetWidth+"px";
     this.style.height=this.offsetHeight+"px";
     this.style.position="fixed";
-    selected_id = this.dataset.num;
+    selected_id = this.parentNode.dataset.num;
     console.log('selected_id: ', selected_id);
 }
 function handleMove(event){
@@ -48,7 +48,7 @@ function handleMove(event){
     _x100=_x/document.body.offsetWidth*100;
     _y100=_y/document.body.offsetHeight*100;
     let elemnum=textOrder[selected_id];
-    /* console.log(_x100+" "+_y100); */
+    console.log(_x100+" "+_y100);
     /* console.log(actionLocation[elemnum][0]+" "+actionLocation[elemnum][1]) */
     if(setLocation[elemnum][0]-sensivility<=_x100 && setLocation[elemnum][0]+sensivility>=_x100){
         if(setLocation[elemnum][1]-sensivility<=_y100 && setLocation[elemnum][1]+sensivility>=_y100){
@@ -77,8 +77,8 @@ function nextpage(change){
     if(mode == 0){
         
     }else{
-        document.getElementById("background").classList.add('opacity');
-        new Add_img("container6",imgList,"fadeIn",eventList).apply();
+        new Add_img("container6",imgList,"no",eventList).apply();
+        addTouchEvent("container6");
     }
 }
 

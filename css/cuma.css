@@ -14,13 +14,13 @@
 }  
 /* @keyframes OpacityCuma {
 	0% {
-        opacity: 0%;
+        opacity: 0;
 	}
 	50% {
-        opacity: 100%;
+        opacity: 1;
     }
     100% {
-        opacity: 100%;
+        opacity: 1;
     }
 } */
 .cuma{
@@ -36,7 +36,7 @@
     }
     20%{
         content:url("../img/index/cuma1.png");
-        opacity: 100%;
+        opacity: 1;
     }
     40%{
         content:url("../img/index/cuma2.png");
@@ -46,9 +46,61 @@
     }
     60.5% {
         content:url("../img/index/cuma2.png");
-        opacity: 100%;
+        opacity: 1;
     }
     100% {
         content:url("../img/index/cuma2.png");
+	}
+}
+
+.cuma_show{
+        /* Choose the animation */
+        animation-name: cumashow;
+        /* The animation’s duration */
+        animation-duration: 7000ms;
+        /* The number of times we want
+            the animation to run */
+        animation-iteration-count: 1;
+        /* Causes the animation to reverse
+            on every odd iteration */
+        animation-direction: normal;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+}
+@keyframes cumashow {
+	0% {
+        content:url("../img/game/1.png");
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    5%{
+        content:url("../img/game/1.png");
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    15%{
+        content:url("../img/game/2.png");
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    20%{
+        content:url("../img/game/3.png");
+    }
+	50% {
+        content:url("../img/game/4.png");
+    }
+    55% {
+        content:url("../img/game/5.png");
+        transform: translateY(0%);
+    }
+    80% {
+        content:url("../img/game/5.png");
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    100% {
+        content:url("../img/game/5.png");
+        transform: translateY(100%);
+        opacity: 0;
 	}
 }
