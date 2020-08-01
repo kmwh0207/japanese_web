@@ -6,7 +6,7 @@ let _y100;
 let _x,_y;
 let timer;
 let sensivility=10;
-let total_page=10;
+let total_page=8;
 let eventFunctions;
 window.showtext=1;
 let imgList = [
