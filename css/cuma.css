@@ -75,12 +75,12 @@
     }
     5%{
         content:url("../img/game/1.png");
-        transform: translateY(0%);
+        transform: translateY(10%);
         opacity: 1;
     }
     15%{
         content:url("../img/game/2.png");
-        transform: translateY(0%);
+        transform: translateY(10%);
         opacity: 1;
     }
     20%{
@@ -91,11 +91,11 @@
     }
     55% {
         content:url("../img/game/5.png");
-        transform: translateY(0%);
+        transform: translateY(10%);
     }
     80% {
         content:url("../img/game/5.png");
-        transform: translateY(0%);
+        transform: translateY(10%);
         opacity: 1;
     }
     100% {
