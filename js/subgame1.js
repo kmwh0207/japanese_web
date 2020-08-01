@@ -29,7 +29,7 @@ function nextpage(mode) {
     Array.from(document.getElementsByClassName("button")).forEach(function(){
       
     });//버튼누르면 색변하게 수정중
-    this.src=this.src.substring(0,-4)+"_.png";
+    //this.src=this.src.substring(0,-4)+"_.png";
     let elem = document.getElementsByClassName("item");
     count=0;
     for (let i of elem) {
