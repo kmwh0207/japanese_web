@@ -89,6 +89,7 @@ function handleMove(event){
                 this.classList.add("none");
                 document.getElementById("anim").classList.add("opacityAlternate2");
                 count++;
+                music('img/game/refrigerator/button-28.mp3');
             }
         } 
 }
@@ -125,7 +126,7 @@ function playgame(){
     document.getElementsByClassName("button")[correct_location].style.backgroundImage=`url('${numList[correct]}')`;
     console.log('run');
     document.getElementsByClassName("button")[correct_location].addEventListener('touchstart',function(){
-        music('img/game/refrigerator/button-28.mp3');
+        music('img/game/correct.wav');
         document.getElementById('menu').classList.add('none');
         document.getElementById('opendoor').classList.remove('none');
         this.removeEventListener('touchstart',arguments.callee);
