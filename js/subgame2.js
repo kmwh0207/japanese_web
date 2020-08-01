@@ -126,7 +126,7 @@ function playgame(){
     document.getElementsByClassName("button")[correct_location].style.backgroundImage=`url('${numList[correct]}')`;
     console.log('run');
     document.getElementsByClassName("button")[correct_location].addEventListener('touchstart',function(){
-        music('img/game/correct.wav');
+        music('img/game/correct.mp3');
         document.getElementById('menu').classList.add('none');
         document.getElementById('opendoor').classList.remove('none');
         this.removeEventListener('touchstart',arguments.callee);
