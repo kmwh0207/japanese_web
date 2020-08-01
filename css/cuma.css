@@ -54,18 +54,19 @@
 }
 
 .cuma_show{
-        /* Choose the animation */
-        animation-name: cumashow;
-        /* The animation’s duration */
-        animation-duration: 7000ms;
-        /* The number of times we want
-            the animation to run */
-        animation-iteration-count: 1;
-        /* Causes the animation to reverse
-            on every odd iteration */
-        animation-direction: normal;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
+    will-change: contents;
+    /* Choose the animation */
+    animation-name: cumashow;
+    /* The animation’s duration */
+    animation-duration: 7000ms;
+    /* The number of times we want
+    the animation to run */
+    animation-iteration-count: 1;
+    /* Causes the animation to reverse
+        on every odd iteration */
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 @keyframes cumashow {
 	0% {

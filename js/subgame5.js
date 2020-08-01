@@ -79,16 +79,16 @@ let names=['정답!','훌륭해요!','','','','','','','','']
 
 let eventList = [function(){},function(){},function(){},function(){}];
 let correctNum=[2,0,3,0,1,3,0,1,0,3];
-let setLocation=[[57.5,41],[42.5,41],[57.5,41],[60,41],[72,40],[92,41],[57,41],[30,44],[30,44],[19,41],[57,41]];
+let setLocation=[[57.5,41],[42.5,41],[57.5,41],[60,41],[72,40],[92,41],[57,41],[30,44],[19,41],[57,41]];
 
 window.addEventListener('load',function(){
     nextpage(0);
     eventFunctions=new Add_exp(names);
-    let i=0;
+    let i=1;
     timer = setInterval(function(){
         document.getElementById('temp_2').src=`${mainAnim[i]}`;
         i= (i+1)%3;
-    },300);
+    },700);
 });
 
 function start(){

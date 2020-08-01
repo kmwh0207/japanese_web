@@ -4,6 +4,8 @@ let selected_id = 0;
 let count=0;
 let imgList=["img/game/number/1.png","img/game/number/2.png","img/game/number/3.png","img/game/number/4.png","img/game/number/5.png","img/game/number/6.png","img/game/number/7.png","img/game/number/8.png","img/game/number/9.png","img/game/number/10.png"];
 let soundList=['1.mp3','2.mp3','3.mp3','4.mp3','5.mp3','6.mp3','7.mp3','8.mp3','9.mp3','10.mp3'];
+let defaultImg=["img/game/number/1 (2).png","img/game/number/2 (2).png","img/game/number/3 (2).png"];
+let clickedImg=["img/game/number/숫자버튼색바뀜_1.png","img/game/number/숫자버튼색바뀜_2.png","img/game/number/숫자버튼색바뀜_3.png"];
 
 window.addEventListener('load', function () {
     nextpage(0);
@@ -18,6 +20,14 @@ window.addEventListener('load', function () {
             document.getElementById("numimg").src=imgList[selected_id];
         }, 1500);
     });
+    Array.from(document.getElementsByClassName("button")).forEach(function(value,index){
+        value.addEventListener("touchend",function(){
+            Array.from(document.getElementsByClassName("button")).forEach(function(value,index){
+                value.children[0].src=defaultImg[index];
+            });
+            value.children[0].src=clickedImg[index];
+        });
+    });//버튼누르면 색변하게 수정중
 });
 
 function pageChange(num){
@@ -26,9 +36,7 @@ function pageChange(num){
 }
 
 function nextpage(mode) {
-    Array.from(document.getElementsByClassName("button")).forEach(function(){
-      
-    });//버튼누르면 색변하게 수정중
+    
     //this.src=this.src.substring(0,-4)+"_.png";
     let elem = document.getElementsByClassName("item");
     count=0;

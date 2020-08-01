@@ -14,6 +14,8 @@ var movepage = function(page){
         document.getElementById("frame").style.zIndex=500;
         document.getElementById("index").innerHTML="";
     });
+    document.getElementById("go_home").onclick="";
+    document.getElementById("go_home").addEventListener("touchstart",function(){go_page('main3.html')});
 }
 
 let eventList = [function(){movepage("subgame1")},

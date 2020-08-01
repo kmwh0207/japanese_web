@@ -16,7 +16,7 @@ let eventList = [
 ];
 
 
-let textOrder=[[2,1,4,0,3],[0,4,3,2,1]];
+let textOrder=[[2,1,0,4,3],[0,4,3,2,1]];
 let setLocation=[[[18,24],[11,47],[77,19],[76,38],[76,62]],[[27,22],[26,43],[71,26],[69,47],[69,67]]];
 
 window.addEventListener('load',function(){

@@ -59,11 +59,11 @@ let eventList2 = [
     },
 ];
 
-function addTouchEvent(id){
+function addTouchEvent(id,num){
     let elements = document.getElementById(id).children;
     for(let i=0; i<elements.length; i++){
         elements[i].addEventListener("touchstart",function(){
-            selected_id = this.dataset.num;
+            selected_id = parseInt(this.dataset.num)+parseInt(num);
             document.getElementById("content").innerHTML=textList[mode][i];
             document.getElementsByClassName("item")[selected_id].classList.remove("hidden");
         },false);
@@ -82,15 +82,19 @@ function nextpage(change){
     for(let i of elem){
         i.innerHTML="";
     }
-    addTouchEvent("container6",0,textList);
+    addTouchEvent("container6",0);
+    addTouchEvent("container6_",3);
     if(mode == 0){
         document.getElementById("background").setAttribute("src","img/game/drink/drinks_learn_1(background).png");
         //document.getElementById("bt").setAttribute("src","img/game/clothing/bt.png")
-        new Add_img("container6",imgList1,"fadeIn",eventList1).apply();
+        new Add_img("container6",imgList1.slice(0,3),"fadeIn",eventList1.slice(0,3)).apply();
+        new Add_img("container6_",imgList1.slice(3,6),"fadeIn",eventList1.slice(3,6)).apply();
+
     }else{
         document.getElementById("background").setAttribute("src","img/game/drink/drinks_learn_2(background).png");
         //document.getElementById("bt").setAttribute("src","img/game/clothing/bt2.png")
-        new Add_img("container6",imgList2,"fadeIn",eventList2).apply();
+        new Add_img("container6",imgList2.slice(0,3),"fadeIn",eventList2.slice(3,6)).apply();
+        new Add_img("container6_",imgList2.slice(3,6),"fadeIn",eventList2.slice(3,6)).apply();
     }
 }
 
