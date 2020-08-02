@@ -1,9 +1,10 @@
-let imgList = ["img/mainmenu/메인화면_3(아이콘)_1.png",
-"img/mainmenu/메인화면_3(아이콘)_2.png",
-"img/mainmenu/메인화면_3(아이콘)_3.png",
+let imgList = [
 "img/mainmenu/메인화면_3(아이콘)_4.png",
 "img/mainmenu/메인화면_3(아이콘)_5.png",
 "img/mainmenu/메인화면_3(아이콘)_6.png",
+"img/mainmenu/메인화면_3(아이콘)_1.png",
+"img/mainmenu/메인화면_3(아이콘)_2.png",
+"img/mainmenu/메인화면_3(아이콘)_3.png"
 ]
 
 var movepage = function(page){
@@ -18,12 +19,13 @@ var movepage = function(page){
     document.getElementById("go_home").addEventListener("touchstart",function(){go_page('main3.html')});
 }
 
-let eventList = [function(){movepage("subgame1")},
-function(){movepage("subgame2")},
-function(){movepage("subgame3")},
+let eventList = [
 function(){movepage("subgame4")},
 function(){movepage("subgame5")},
-function(){movepage("subgame6")}
+function(){movepage("subgame6")},
+function(){movepage("subgame1")},
+function(){movepage("subgame2")},
+function(){movepage("subgame3")},
 ]
 
 window.addEventListener('load',function(){

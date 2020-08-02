@@ -45,7 +45,7 @@ function nextpage(mode) {
     }
     document.getElementById("container_final").classList.add("none");
     document.getElementsByClassName("item_")[0].classList.remove("opacity");
-    document.getElementById("number").classList.remove("remove");
+    document.getElementById("number").classList.remove("none");
 
     if (mode == 0) {
         selected_id=0;

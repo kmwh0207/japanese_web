@@ -14,21 +14,7 @@ let soundList=['1+1=2','1+2=3','1+3=4','2+3=5','3+3=6','3+4=7','3+5=8','4+5=9','
 window.addEventListener('load',function(){
     playgame();
     eventFunctions=new Add_exp(names);
-    /* Array.from(document.getElementsByClassName("item")).forEach(function(e){e.addEventListener('touchend',function(){
-        count++;
-        event.preventDefault();
-        
-        e.style.backgroundImage=`url('${e.style.backgroundImage.slice(5, -6) + "_.png"}')`;
-        console.log(`${e.style.backgroundImage.slice(5, -6)}`);
-        
-        e.classList.add("opacity");
-        clearTimeout(playing);
-        playing=setTimeout(() => {
-            e.classList.remove("opacity");
-            playgame();
-        }, 2000);})}
-    ); */
-    document.body.addEventListener("touchstart",function(){
+    /* document.body.addEventListener("touchstart",function(){
         music("img/game/add/"+soundList[selected_id]+".mp3");
         let elem=document.getElementsByClassName("item")[count];
         elem.classList.add("opacity");
@@ -48,7 +34,7 @@ window.addEventListener('load',function(){
         setTimeout(() => {
             playgame();
         }, 5000);
-    })
+    }) */
 });
 
 function playgame(){
@@ -58,4 +44,23 @@ function playgame(){
     document.getElementsByClassName("item")[0].style.backgroundImage=`url('${imgList[order[selected_id][0]-1]}')`;
     document.getElementsByClassName("item")[1].style.backgroundImage=`url('${imgList[order[selected_id][1]-1]}')`;
     document.getElementsByClassName("item")[2].style.backgroundImage=`url('${imgList[order[selected_id][2]-1]}')`;
+    Array.from(document.getElementsByClassName("item")).forEach(function(e){e.addEventListener('touchend',function(){
+        count++;
+        event.preventDefault();
+        
+        e.style.backgroundImage=`url('${e.style.backgroundImage.slice(5, -6) + "_.png"}')`;
+        console.log(`${e.style.backgroundImage.slice(5, -6)}`);
+        
+        e.classList.add("opacity");
+        clearTimeout(playing);
+        if(count>2){
+            music("img/game/add/"+soundList[selected_id]+".mp3");
+            playing=setTimeout(() => {
+                e.classList.remove("opacity");
+                playgame();
+            }, 5000);
+        }
+        this.removeEventListener("touchend",arguments.callee);
+        });
+    });
 }

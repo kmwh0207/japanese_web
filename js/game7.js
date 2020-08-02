@@ -4,10 +4,10 @@ let eventFunction;
 
 let textList=[['','','','','',''],['','','','','','']];
 
-let imgList1 = ['img/game/food/(라면).png','','img/game/food/(김밥).png','','img/game/food/(우동).png','','img/game/food/(초밥).png','','img/game/food/(튀김).png',''];
+let imgList1 = ['img/game/food/(김밥).png','','img/game/food/(라면).png','','img/game/food/(우동).png','','img/game/food/(초밥).png','','img/game/food/(튀김).png',''];
 let imgList2 = ['img/game/food/(핫도그).png','','img/game/food/(도너츠).png','','img/game/food/(샌드위치).png','','img/game/food/(아이스크림).png','','img/game/food/(포테이토).png',''];
 
-let eventList1=[function(){music("img/game/food/라멘(라면).mp3");},function(){},function(){music("img/game/food/킴밥(김밥).mp3");},function(){},function(){music("img/game/food/우동.mp3");},function(){},function(){music("img/game/food/스시(초밥).mp3");},function(){},function(){music("img/game/food/덴뿌라(튀김).mp3");},function(){}];
+let eventList1=[function(){music("img/game/food/킴밥(김밥).mp3");},function(){},function(){music("img/game/food/라멘(라면).mp3");},function(){},function(){music("img/game/food/우동.mp3");},function(){},function(){music("img/game/food/스시(초밥).mp3");},function(){},function(){music("img/game/food/덴뿌라(튀김).mp3");},function(){}];
 let eventList2=[function(){music("img/game/food/홋토도크(핫도그).mp3");},function(){},function(){music("img/game/food/도나츠.mp3");},function(){},function(){music("img/game/food/산도이치(샌드위치).mp3");},function(){},function(){music("img/game/food/아이스크리므(아이스크림).mp3");},function(){},function(){music("img/game/food/포테토(감자).mp3");},function(){}];
 
 let eventList = [

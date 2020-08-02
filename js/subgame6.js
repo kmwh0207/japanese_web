@@ -30,10 +30,10 @@ let imgList = [
         "img/game/draw/3/5.png"
     ],[
         '',"img/game/draw/4/1.png",'',
+        "img/game/draw/4/5.png",'',
         "img/game/draw/4/2.png",'',
         "img/game/draw/4/3.png",'',
-        "img/game/draw/4/4.png",'',
-        "img/game/draw/4/5.png"
+        "img/game/draw/4/4.png"
     ],[
         '',"img/game/draw/5/1.png",'',
         "img/game/draw/5/2.png",'',
@@ -83,7 +83,7 @@ let names = [
         '',
         'かんこく',
         '',
-        '日本の',
+        '日本',
         '',
         'はい',
         '',
@@ -195,11 +195,12 @@ function handleEnd(event){
     console.log('selected_id: ', selected_id);
     document.querySelector('#tongs').classList.add('movetongs');
     this.children[0].classList.add('moveball');
+    music("img/game/draw/인형뽑기소리.mp3");
     /* 이벤트 종료 후 */
     setTimeout(function(){
         eventFunctions.addExp(mode,selected_id);
         music("img/game/draw/"+(mode+1)+"/"+(Math.floor(selected_id/2)+1)+".m4a");
-    },2500);
+    },12000);
 }
 
 function nextpage(num){

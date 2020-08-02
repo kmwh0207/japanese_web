@@ -1,13 +1,14 @@
 .object {
     position: relative;
-    top: 20%;
+    top: 24%;
+    left: 3%;
     display: grid;
-    width:100%;
+    width: 90%;
     height: 40%;
     margin: 0%;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(auto-fit,minmax(10%,auto));
-    grid-gap: 14%;
+    grid-gap: 10%;
 }
 .paintAction{
     

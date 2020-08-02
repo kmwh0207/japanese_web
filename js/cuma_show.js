@@ -6,12 +6,13 @@ window.addEventListener('load', function () {
         //let link = new RegExp(this.src.split("/").pop());
         if (link.match('_2.') && firststart==1) {
             let cuma = document.createElement("img");
-            cuma.setAttribute('style', "position:absolute; z-index:2000; bottom:0; right:15%; width:20%;");
+            cuma.setAttribute('style', "position:absolute; z-index:2000; bottom:0; width:100%;");
             cuma.classList.add("cuma_show");
             cuma.addEventListener("animationend",function(){
-                document.body.removeChild(this);
+                document.body.removeChild(document.getElementById("cuma_div"));
             })
-            document.body.appendChild(cuma);
+            document.getElementById("cuma_div").classList.remove("none");
+            document.getElementById("cuma_div").appendChild(cuma);
             firststart=0;
         }
     });

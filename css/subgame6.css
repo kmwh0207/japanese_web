@@ -100,7 +100,7 @@
     /* Choose the animation */
   animation-name: movetongs;
   /* The animation’s duration */
-  animation-duration: 4000ms;
+  animation-duration: 15000ms;
   /* The number of times we want
       the animation to run */
   animation-iteration-count: 1;
@@ -114,7 +114,7 @@
     /* Choose the animation */
   animation-name: moveball;
   /* The animation’s duration */
-  animation-duration: 4000ms;
+  animation-duration: 15000ms;
   /* The number of times we want
       the animation to run */
   animation-iteration-count: 1;

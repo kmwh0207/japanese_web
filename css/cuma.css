@@ -5,11 +5,11 @@
     animation-duration: 10000ms;
     /* The number of times we want
         the animation to run */
-    animation-iteration-count: 2;
+    animation-iteration-count: infinite;
     /* Causes the animation to reverse
         on every odd iteration */
     animation-direction: normal;
-    animation-timing-function: ease-out;
+    animation-timing-function: linear;
     animation-fill-mode: forwards;
 }  
 /* @keyframes OpacityCuma {
@@ -33,20 +33,6 @@
 @keyframes Cuma {
 	0% {
         content:url("../img/index/cuma1.png");
-    }
-    20%{
-        content:url("../img/index/cuma1.png");
-        opacity: 1;
-    }
-    40%{
-        content:url("../img/index/cuma2.png");
-    }
-	60% {
-        content:url("../img/index/cuma3.png");
-    }
-    60.5% {
-        content:url("../img/index/cuma2.png");
-        opacity: 1;
     }
     100% {
         content:url("../img/index/cuma2.png");
@@ -104,4 +90,13 @@
         transform: translateY(100%);
         opacity: 0;
 	}
+}
+#cuma_div{
+    position: absolute;
+    top: 70%;
+    right:20%;
+    width:20%;
+    height: 30%;
+    z-index: inherit;
+    overflow: hidden;
 }

@@ -21,8 +21,8 @@ let imgList_ = ["img/game/fruit/play_1_basket.png",
 "img/game/fruit/play_1_basket.png", 
 "img/game/fruit/play_1_basket.png"];
 let eventList_ = [function(){},function(){},function(){},function(){},function(){}];
-let textList=[["かぎ<br/>persimmon","すいか<br/>watermelon","バナナ<br/>banana","イチゴ<br/>strawberry","ぶどう<br/>grape"],["りんご<br/>apple","オリンジ<br/>orange","なし<br/>apple","パイナップル<br/>pineapple","もも<br/>peach"]];
-let textOrder=[[3,1,2,0,4],[0,1,3,4,2]];
+let textList=[["かぎ<br/>persimmon","すいか<br/>watermelon","バナナ<br/>banana","イチゴ<br/>strawberry","ぶどう<br/>grape"],["りんご<br/>apple","オリンジ<br/>orange","パイナップル<br/>pineapple","もも<br/>peach","なし<br/>pear"]];
+let textOrder=[[3,1,2,4,0],[0,1,3,4,2]];
 let actionLocation = [[[23,11],[31,23]],[[49,11],[58,23]],[[70,11],[82,23]],[[36,33],[44,46]],[[61,33],[71,46]],];
 
 window.addEventListener('load',function(){
@@ -94,13 +94,15 @@ function nextpage(change){
         i.innerHTML="";
     }
     if(mode == 0){
+        document.getElementById("background").src="img/game/fruit/과일_Play1.png";
         new Add_img("container5",imgList1,"fadeIn",eventList).apply();
         new Add_img("container5_",imgList_,"fadeIn",eventList_ ).apply();
-        new Add_text("container5_",textList[0]).apply();
+        //new Add_text("container5_",textList[0]).apply();
     }else{
+        document.getElementById("background").src="img/game/fruit/과일_Play2.png";
         new Add_img("container5",imgList2,"fadeIn",eventList).apply();
         new Add_img("container5_",imgList_,"fadeIn",eventList_ ).apply();
-        new Add_text("container5_",textList[1]).apply();
+        //new Add_text("container5_",textList[1]).apply();
     }
 }
 

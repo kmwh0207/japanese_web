@@ -93,7 +93,7 @@ function nextpage(change){
     }else{
         document.getElementById("background").setAttribute("src","img/game/drink/drinks_learn_2(background).png");
         //document.getElementById("bt").setAttribute("src","img/game/clothing/bt2.png")
-        new Add_img("container6",imgList2.slice(0,3),"fadeIn",eventList2.slice(3,6)).apply();
+        new Add_img("container6",imgList2.slice(0,3),"fadeIn",eventList2.slice(0,3)).apply();
         new Add_img("container6_",imgList2.slice(3,6),"fadeIn",eventList2.slice(3,6)).apply();
     }
 }
