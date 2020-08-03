@@ -80,9 +80,9 @@
         content:url("../img/game/5.png");
         transform: translateY(10%);
     }
-    80% {
+    70% {
         content:url("../img/game/5.png");
-        transform: translateY(10%);
+        transform: translateY(100%);
         opacity: 1;
     }
     100% {
