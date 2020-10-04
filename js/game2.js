@@ -1,5 +1,6 @@
 var mode = 0;
 let selected_id = 0;
+window.showtext=1;
 
 let imgList1 = ["img/game/fruit/strawberry.png", "img/game/fruit/watermelon.png"];
 
@@ -7,12 +8,12 @@ let eventList1 = [
     function () {
         music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "イチゴ";
+        document.getElementById("content").innerHTML = "strawberry イチゴ";
     },
     function () {
         music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "すいか";
+        document.getElementById("content").innerHTML = "watermelon すいか";
     }
 ];
 
@@ -22,17 +23,17 @@ let eventList2 = [
     function () {
         music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "バナナ";
+        document.getElementById("content").innerHTML = "banana バナナ";
     },
     function () {
         music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "ぶどう";
+        document.getElementById("content").innerHTML = "graph ぶどう";
     },
     function () {
         music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "かぎ";
+        document.getElementById("content").innerHTML = "persimmon かぎ";
     }
 ];
 
@@ -43,12 +44,12 @@ let eventList1_ = [
     function () {
         music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "りんご";
+        document.getElementById("content").innerHTML = "apple りんご";
     },
     function () {
         music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "オリンジ";
+        document.getElementById("content").innerHTML = "orange オリンジ";
     }
 ];
 
@@ -58,17 +59,17 @@ let eventList2_ = [
     function () {
         music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "もも";
+        document.getElementById("content").innerHTML = "peach もも";
     },
     function () {
         music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "なし";
+        document.getElementById("content").innerHTML = "pear なし";
     },
     function () {
         music(this.src.slice(0, -4) + ".mp3");
         this.src = this.src.slice(0, -5) + "_.png";
-        document.getElementById("content").innerHTML = "パイナップル";
+        document.getElementById("content").innerHTML = "pineapple パイナップル";
     }
 ];
 
