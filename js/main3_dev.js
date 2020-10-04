@@ -1,3 +1,4 @@
+window.showtext=undefined;
 let imgList = [
 "img/mainmenu/메인화면_3(아이콘)_4.png",
 "img/mainmenu/메인화면_3(아이콘)_5.png",

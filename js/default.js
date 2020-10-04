@@ -31,7 +31,7 @@ window.onload = function () {
 document.body.style.height=window.innerHeight.toString()+"px"*/
 
 function searchParam(key) {
-    return new URLSearch.get(key);
+    return URLSearch.get(key);
 }
 
 function css(elem, prop, val) {

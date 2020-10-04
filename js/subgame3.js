@@ -1,66 +1,88 @@
-
-var mode=0;
-let selected_id = -1;
-let eventFunctions;
+var mode = 0;
+let selected_id = 0;
 let count=0;
-let playing;
-let imgList=["img/game/number/1.png","img/game/number/2.png","img/game/number/3.png","img/game/number/4.png","img/game/number/5.png","img/game/number/6.png","img/game/number/7.png","img/game/number/8.png","img/game/number/9.png","img/game/number/10.png"]
-let order=[[1,1,2],[1,2,3],[1,3,4],[2,3,5],[3,3,6],[3,4,7],[3,5,8],[4,5,9],[4,6,10]];
-let names=['','','','','','','','','','']
+let player=0;
+let score=[0,0];
+window.showtext=1;
 
-let eventList = [function(){},function(){},function(){},function(){}];
-let correctNum=[0,0,0,0,0,0,0,0,0,0];
-let soundList=['1+1=2','1+2=3','1+3=4','2+3=5','3+3=6','3+4=7','3+5=8','4+5=9','4+6=10'];
-window.addEventListener('load',function(){
-    playgame();
-    eventFunctions=new Add_exp(names);
-    /* document.body.addEventListener("touchstart",function(){
-        music("img/game/add/"+soundList[selected_id]+".mp3");
-        let elem=document.getElementsByClassName("item")[count];
-        elem.classList.add("opacity");
-        elem.style.backgroundImage=`url('${elem.style.backgroundImage.slice(5, -6) + "_.png"}')`;
-        setTimeout(() => {
-            count++;
-            elem=document.getElementsByClassName("item")[count];
-            elem.style.backgroundImage=`url('${elem.style.backgroundImage.slice(5, -6) + "_.png"}')`;
-            elem.classList.add("opacity");
-        }, 1800);
-        setTimeout(() => {
-            count++;
-            elem=document.getElementsByClassName("item")[count];
-            elem.style.backgroundImage=`url('${elem.style.backgroundImage.slice(5, -6) + "_.png"}')`;
-            elem.classList.add("opacity");
-        }, 2500);
-        setTimeout(() => {
-            playgame();
-        }, 5000);
-    }) */
+
+window.addEventListener('load', function () {
+   document.getElementById('dice1').addEventListener("touchstart",run_dice,false);
+   document.getElementById('dice2').addEventListener("touchstart",run_dice,false);
+   //new Add_exp();
 });
 
-function playgame(){
-    Array.from(document.getElementsByClassName("item")).forEach(function(i){i.classList.remove("opacity");})
-    count=0;
-    selected_id=Math.floor(Math.random()*9);
-    document.getElementsByClassName("item")[0].style.backgroundImage=`url('${imgList[order[selected_id][0]-1]}')`;
-    document.getElementsByClassName("item")[1].style.backgroundImage=`url('${imgList[order[selected_id][1]-1]}')`;
-    document.getElementsByClassName("item")[2].style.backgroundImage=`url('${imgList[order[selected_id][2]-1]}')`;
-    Array.from(document.getElementsByClassName("item")).forEach(function(e){e.addEventListener('touchend',function(){
-        count++;
-        event.preventDefault();
-        
-        e.style.backgroundImage=`url('${e.style.backgroundImage.slice(5, -6) + "_.png"}')`;
-        console.log(`${e.style.backgroundImage.slice(5, -6)}`);
-        
-        e.classList.add("opacity");
-        clearTimeout(playing);
-        if(count>2){
-            music("img/game/add/"+soundList[selected_id]+".mp3");
-            playing=setTimeout(() => {
-                e.classList.remove("opacity");
-                playgame();
-            }, 5000);
-        }
-        this.removeEventListener("touchend",arguments.callee);
-        });
-    });
+function run_dice(event){
+    player = this.dataset.num;
+    rollDiceWithoutValues1();
+
+    //alert(expList[0].kor);
 }
+
+function response(res) {
+    // returns an array of the values from the dice
+    score[player]+=parseInt(res);
+    console.log(score[player]);
+    document.getElementById('dice1').classList.add("none");
+    document.getElementById('dice2').classList.add("none");
+    setTimeout(()=>{
+        try{
+            document.getElementById("player_state").innerHTML=`1P:${score[0]}&nbsp;&nbsp;&nbsp;2P:${score[1]}`;
+            document.getElementById("dice-box1").style.backgroundImage=`url("img/game/boardgame/${score[player]}.png")`; 
+            document.getElementsByClassName("dice-outer")[0].removeChild(document.getElementsByClassName("dice")[0]);
+            document.getElementById("content").innerHTML=`${expList[score[player]-1].kor} : ${expList[score[player]-1].jap}`;
+            music(`img/game/boardgame/${score[player]}.m4a`,1.0);
+        }catch(e){
+
+        }
+    },1000);
+    setTimeout(()=>{
+        document.getElementById("dice-box1").style.backgroundImage=`url("")`
+        switch (score[player]){
+            case 10:
+                score[player]=4;
+                document.getElementById("player_state").innerHTML="4번으로 이동합니다!";
+                break;
+            case 12:
+                score[player]=17;
+                document.getElementById("player_state").innerHTML="17번으로 이동합니다!";
+
+                break;
+            case 18:
+                score[player]=15;
+                document.getElementById("player_state").innerHTML="15번으로 이동합니다!";
+                break;
+            default:
+                break;
+        }
+        if(score[player]>18){
+            document.getElementById("content").innerHTML=`게임 종료 ${parseInt(player)+parseInt(1)}P 승리`;
+        }else{
+            document.getElementById('dice1').classList.remove("none");
+            document.getElementById('dice2').classList.remove("none");
+        }
+    },3000);
+  }
+
+function rollDiceWithoutValues1() {
+      const element = document.getElementById('dice-box1');
+      const numberOfDice = 1;
+      const options = {
+        element, // element to display the animated dice in.
+        numberOfDice, // number of dice to use
+        callback: response
+      }
+      rollADie(options);
+  }
+
+  function rollDiceWithoutValues2() {
+        player = 1;
+        const element = document.getElementById('dice-box1');
+        const numberOfDice = 1;
+        const options = {
+          element, // element to display the animated dice in.
+          numberOfDice, // number of dice to use
+          callback: response
+        }
+        rollADie(options);
+    }
